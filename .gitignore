@@ -222,3 +222,8 @@ papersimreading.log
 config.json
 /scratch/
 .sync.lock
+backfill.out
+dropbox-link-review.md
+review.json
+.papersync-excluded.json
+refresh.out

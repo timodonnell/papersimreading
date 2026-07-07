@@ -232,5 +232,28 @@ def llm_extract(first_page_text: str, api_key: str, model: str) -> dict | None:
     return data
 
 
+def unpaywall_oa(doi: str, mailto: str) -> str | None:
+    """Return a free open-access URL for this DOI, or None if it's paywalled.
+
+    Uses Unpaywall. A non-None result means an openly licensed copy exists, so we
+    can link to the public version instead of the user's Dropbox copy.
+    """
+    try:
+        r = _SESSION.get(
+            f"https://api.unpaywall.org/v2/{requests.utils.quote(doi)}",
+            params={"email": mailto},
+            timeout=30,
+        )
+        if r.status_code != 200:
+            return None
+        data = r.json()
+    except (requests.RequestException, ValueError):
+        return None
+    if not data.get("is_oa"):
+        return None
+    loc = data.get("best_oa_location") or {}
+    return loc.get("url_for_pdf") or loc.get("url") or None
+
+
 def polite_sleep(seconds: float = 0.5) -> None:
     time.sleep(seconds)

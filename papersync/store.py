@@ -13,6 +13,10 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DATA_PATH = REPO_ROOT / "data" / "references.json"
+# Files that were processed but are NOT papers (no DOI/arXiv) are remembered here
+# so they are neither published nor re-processed every run. This file is
+# git-ignored: non-paper filenames must never reach the public repo.
+EXCLUDED_PATH = REPO_ROOT / ".papersync-excluded.json"
 
 
 def sha256_file(path: Path, chunk: int = 1 << 20) -> str:
@@ -42,3 +46,14 @@ def index_by_path(records: list[dict]) -> dict[str, dict]:
 
 def index_by_hash(records: list[dict]) -> dict[str, dict]:
     return {r["file_sha256"]: r for r in records if r.get("file_sha256")}
+
+
+def load_excluded() -> list[dict]:
+    """Minimal stat records for processed-but-not-a-paper files (git-ignored)."""
+    if EXCLUDED_PATH.exists():
+        return json.loads(EXCLUDED_PATH.read_text() or "[]")
+    return []
+
+
+def save_excluded(entries: list[dict]) -> None:
+    EXCLUDED_PATH.write_text(json.dumps(entries, indent=2, ensure_ascii=False) + "\n")

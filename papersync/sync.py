@@ -18,16 +18,20 @@ import sys
 import time
 from pathlib import Path
 
-from . import extract, metadata, store
+from . import extract, links, metadata, store
 from .config import Config, load_config
-from .sharelink import dropbox_sharelink
 
 
 def _now_iso() -> str:
     return dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def build_record(pdf: Path, cfg: Config, rel: str, sha: str, stat) -> dict:
+def build_record(pdf: Path, cfg: Config, rel: str, sha: str, stat) -> dict | None:
+    """Extract metadata and return a paper record, or None if it's not a paper.
+
+    A file counts as a paper only if it resolves to a public identifier (DOI or
+    arXiv id). Files without one are never published or linked.
+    """
     """Run the full extraction pipeline for one PDF and return a record dict."""
     text = extract.text_first_pages(pdf, pages=2)
     meta = extract.embedded_metadata(pdf)
@@ -72,10 +76,9 @@ def build_record(pdf: Path, cfg: Config, rel: str, sha: str, stat) -> dict:
             if v:
                 record[k] = v
 
-    # If we still have no title, fall back to the guessed title / filename so the
-    # entry is at least identifiable on the page.
-    if not record["title"]:
-        record["title"] = extract.guess_title(text, meta) or pdf.stem
+    # Inclusion gate: without a public identifier we do not treat it as a paper.
+    if not record["doi"] and not record["arxiv_id"]:
+        return None
 
     # Abstract fallback: pull it straight from the PDF text.
     if not record["abstract"]:
@@ -91,33 +94,15 @@ def build_record(pdf: Path, cfg: Config, rel: str, sha: str, stat) -> dict:
             "added_at": _now_iso(),
         }
     )
-    _resolve_pdf_url(record, pdf, cfg)
+    links.resolve_links(record, pdf, cfg)
     return record
 
 
-def _resolve_pdf_url(record: dict, pdf: Path, cfg: Config) -> None:
-    """Public link first (arXiv/DOI), Dropbox per-file link as fallback."""
-    if record.get("arxiv_id"):
-        record["pdf_url"] = f"https://arxiv.org/abs/{record['arxiv_id']}"
-        record["pdf_url_kind"] = "arxiv"
-        return
-    if record.get("doi"):
-        record["pdf_url"] = f"https://doi.org/{record['doi']}"
-        record["pdf_url_kind"] = "doi"
-        return
-    if cfg.generate_dropbox_links:
-        link = dropbox_sharelink(pdf)
-        if link:
-            record["pdf_url"] = link
-            record["pdf_url_kind"] = "dropbox"
-            return
-    record["pdf_url"] = ""
-    record["pdf_url_kind"] = "none"
-
-
 def iter_pdfs(root: Path):
-    for p in sorted(root.rglob("*.pdf")):
-        if p.is_file() and not p.name.startswith("."):
+    # Top-level only (subfolders hold books and miscellany, not the reading list),
+    # matching .pdf case-insensitively so uppercase .PDF files are included.
+    for p in sorted(root.iterdir()):
+        if p.is_file() and p.suffix.lower() == ".pdf" and not p.name.startswith("."):
             yield p
 
 
@@ -126,12 +111,19 @@ def run(cfg: Config, limit: int | None, since_days: int | None, dry_run: bool) -
     by_path = store.index_by_path(records)
     by_hash = store.index_by_hash(records)
 
+    # Non-paper files seen before: skip cheaply without re-running lookups.
+    excluded = store.load_excluded()
+    excl_by_path = {e["file"]: e for e in excluded}
+    excl_hashes = {e["file_sha256"] for e in excluded if e.get("file_sha256")}
+
     cutoff = None
     if since_days is not None:
         cutoff = time.time() - since_days * 86400
 
     new_count = 0
+    excluded_count = 0
     changed = False
+    excl_changed = False
     processed_since_save = 0
 
     for pdf in iter_pdfs(cfg.papers_dir):
@@ -151,16 +143,39 @@ def run(cfg: Config, limit: int | None, since_days: int | None, dry_run: bool) -
         ):
             continue  # unchanged, already recorded
 
+        prior_excl = excl_by_path.get(rel)
+        if (
+            prior_excl
+            and prior_excl.get("file_size") == stat.st_size
+            and prior_excl.get("file_mtime") == int(stat.st_mtime)
+        ):
+            continue  # unchanged, already known to be a non-paper
+
         sha = store.sha256_file(pdf)
 
-        # Same content under a (possibly) new path: update location, keep metadata.
+        # Same content as an already-recorded paper.
         twin = by_hash.get(sha)
         if twin is not None and twin is not existing:
+            if (cfg.papers_dir / twin["file"]).exists():
+                # A second copy coexists with the original: keep one record and
+                # skip the duplicate without mutating state, so the two paths do
+                # not ping-pong (which would produce a spurious commit each run).
+                continue
+            # The original path is gone: this is a rename/move, so repoint.
             twin["file"] = rel
             twin["file_size"] = stat.st_size
             twin["file_mtime"] = int(stat.st_mtime)
             changed = True
             by_path[rel] = twin
+            continue
+
+        # Same content as a known non-paper: remember this path, don't reprocess.
+        if sha in excl_hashes and (prior_excl is None or prior_excl.get("file") != rel):
+            entry = {"file": rel, "file_sha256": sha, "file_size": stat.st_size,
+                     "file_mtime": int(stat.st_mtime)}
+            excluded.append(entry)
+            excl_by_path[rel] = entry
+            excl_changed = True
             continue
 
         if dry_run:
@@ -172,6 +187,20 @@ def run(cfg: Config, limit: int | None, since_days: int | None, dry_run: bool) -
 
         print(f"[{new_count + 1}] processing {rel} ...", flush=True)
         record = build_record(pdf, cfg, rel, sha, stat)
+
+        if record is None:
+            # Not a paper (no DOI/arXiv): remember it so we skip it next time,
+            # but keep it out of the published dataset.
+            print("      -> excluded (no DOI/arXiv)", flush=True)
+            entry = {"file": rel, "file_sha256": sha, "file_size": stat.st_size,
+                     "file_mtime": int(stat.st_mtime)}
+            excluded.append(entry)
+            excl_by_path[rel] = entry
+            excl_hashes.add(sha)
+            excluded_count += 1
+            excl_changed = True
+            continue
+
         print(
             f"      -> {record['extraction']:14s} | {record['title'][:70]}",
             flush=True,
@@ -188,16 +217,23 @@ def run(cfg: Config, limit: int | None, since_days: int | None, dry_run: bool) -
 
         if processed_since_save >= 5:
             store.save(records)
+            if excl_changed:
+                store.save_excluded(excluded)
+                excl_changed = False
             processed_since_save = 0
 
         if limit and new_count >= limit:
             break
 
-    if changed and not dry_run:
-        store.save(records)
+    if not dry_run:
+        if changed:
+            store.save(records)
+        if excl_changed:
+            store.save_excluded(excluded)
 
     verb = "would add" if dry_run else "added"
-    print(f"\nDone: {verb} {new_count} record(s); {len(records)} total.")
+    tail = f"; excluded {excluded_count} non-paper(s)" if excluded_count else ""
+    print(f"\nDone: {verb} {new_count} record(s); {len(records)} total{tail}.")
     return new_count
 
 

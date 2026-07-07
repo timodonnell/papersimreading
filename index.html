@@ -133,10 +133,14 @@ function render() {
     const titleHtml = p.pdf_url
       ? `<a href="${esc(p.pdf_url)}" target="_blank" rel="noopener">${esc(p.title)}</a>`
       : esc(p.title);
+    const PDF_LABEL = { oa: "Open access ↗", dropbox: "Dropbox PDF ↗",
+                        arxiv: "arXiv ↗", doi: "Publisher ↗" };
     const pdfLink = p.pdf_url
-      ? `<a class="pdf" href="${esc(p.pdf_url)}" target="_blank" rel="noopener">PDF ↗</a>` : "";
-    const kind = p.pdf_url_kind && p.pdf_url_kind !== "none"
-      ? `<span class="chip">${esc(p.pdf_url_kind)}</span>` : "";
+      ? `<a class="pdf" href="${esc(p.pdf_url)}" target="_blank" rel="noopener">${
+           PDF_LABEL[p.pdf_url_kind] || "PDF ↗"}</a>` : "";
+    // Always offer a canonical DOI link too (unless the PDF link already is it).
+    const doiLink = (p.doi_url && p.pdf_url_kind !== "doi")
+      ? `<a class="pdf" href="${esc(p.doi_url)}" target="_blank" rel="noopener">doi.org ↗</a>` : "";
     const abs = p.abstract
       ? `<p class="abstract clamp">${esc(p.abstract)}</p>
          <button class="toggle">Show more</button>` : "";
@@ -145,7 +149,7 @@ function render() {
       ${authors ? `<div class="authors">${esc(authors)}</div>` : ""}
       ${venue ? `<div class="venue">${venue}</div>` : ""}
       ${abs}
-      <div class="row">${kind}${added ? `<span class="added">Added ${added}</span>` : ""}${pdfLink}</div>
+      <div class="row">${added ? `<span class="added">Added ${added}</span>` : ""}${pdfLink}${doiLink}</div>
     </article>`;
   }).join("");
 

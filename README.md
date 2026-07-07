@@ -11,6 +11,17 @@ PDF) from public sources, and appends a record to [`data/references.json`](data/
 The web page ([`index.html`](index.html)) renders that JSON — searchable and
 sortable, no build step.
 
+**Only real papers are published.** A file is included only if it resolves to a
+public identifier (a DOI or arXiv id). Anything else — books, grants, manuals,
+reviewer copies, personal files — is skipped entirely and never linked. The list
+of skipped files is remembered locally in a git-ignored `.papersync-excluded.json`
+so those filenames never reach the repo and are not re-processed each run.
+
+**Link policy.** Open-access and arXiv papers link to the free public copy
+(resolved via [Unpaywall](https://unpaywall.org/)). Paywalled papers (a DOI, but
+no open copy) link to the user's own PDF in Dropbox. So a Dropbox share link is
+only ever generated for an identified paper — never for an unrecognized file.
+
 ## How it works
 
 ```
@@ -24,7 +35,8 @@ Dropbox folder (synced locally)
         │              3. Crossref by filename-derived DOI  (bioRxiv/Nature ids)
         │              4. Crossref by title
         │              5. LLM over first-page text  (optional, needs API key)
-        │            link: public arXiv/DOI first, else a Dropbox share link
+        │            no DOI/arXiv id? -> not a paper, excluded (never published)
+        │            link: OA/arXiv -> public copy; paywalled -> Dropbox
         ▼
   data/references.json ──► git commit & push ──► GitHub Pages renders index.html
 ```
@@ -88,8 +100,10 @@ this machine (not a cloud agent). Logs go to `papersimreading.log` (git-ignored)
 
 | Path | Purpose |
 |------|---------|
-| `papersync/` | the sync pipeline (config, PDF extraction, metadata lookups, store) |
+| `papersync/` | the sync pipeline (config, PDF extraction, metadata lookups, links, store) |
+| `papersync/refresh_links.py` | re-resolve links for existing records (`python -m papersync.refresh_links`) |
 | `data/references.json` | the reference database (source of truth for the page) |
+| `.papersync-excluded.json` | local, git-ignored memory of non-paper files (kept out of the repo) |
 | `index.html` | the GitHub Pages site, renders `references.json` client-side |
 | `scripts/run.sh` | cron entry point: sync + commit + push |
 | `scripts/install-cron.sh` | install/refresh the cron entry |
