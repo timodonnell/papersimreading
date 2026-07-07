@@ -57,6 +57,7 @@
   .toggle { font-size: 12px; color: var(--accent); cursor: pointer; background: none; border: none; padding: 0; }
   a.pdf { font-size: 13px; color: var(--accent); text-decoration: none; }
   a.pdf:hover { text-decoration: underline; }
+  .added { font-size: 12px; color: var(--muted); }
   .empty { color: var(--muted); text-align: center; padding: 40px; }
 </style>
 </head>
@@ -68,7 +69,7 @@
 <div class="controls">
   <input type="search" id="q" placeholder="Search title, author, journal, abstract…" autocomplete="off" />
   <select id="sort">
-    <option value="added">Recently added</option>
+    <option value="added">Recently added (to Dropbox)</option>
     <option value="published">Publication date</option>
     <option value="title">Title A–Z</option>
   </select>
@@ -82,14 +83,23 @@ function esc(s) {
   return (s || "").replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c]));
 }
 
+const MONTHS = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
 function fmtDate(s) {
   if (!s) return "";
   const m = /^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?/.exec(s);
   if (!m) return s;
-  const months = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   let out = m[1];
-  if (m[2]) out = months[+m[2]] + " " + out;
+  if (m[2]) out = MONTHS[+m[2]] + " " + out;
   return out;
+}
+
+// file_mtime is a Unix epoch (seconds): the PDF's timestamp in Dropbox, used as
+// the "date added" signal.
+function fmtAdded(epoch) {
+  if (!epoch) return "";
+  const d = new Date(epoch * 1000);
+  return `${MONTHS[d.getMonth() + 1]} ${d.getDate()}, ${d.getFullYear()}`;
 }
 
 function matches(p, q) {
@@ -98,19 +108,18 @@ function matches(p, q) {
   return q.toLowerCase().split(/\s+/).every(t => hay.includes(t));
 }
 
-function sortKey(p) {
-  if (state.sort === "title") return (p.title || "").toLowerCase();
-  if (state.sort === "published") return p.published || "";
-  return p.added_at || "";
+function compare(a, b) {
+  if (state.sort === "title")
+    return (a.title || "").toLowerCase().localeCompare((b.title || "").toLowerCase());
+  if (state.sort === "published")
+    return (b.published || "").localeCompare(a.published || "");   // newest first
+  return (b.file_mtime || 0) - (a.file_mtime || 0);                // recently added first
 }
 
 function render() {
   const list = document.getElementById("list");
   let rows = state.data.filter(p => matches(p, state.q));
-  rows.sort((a, b) => {
-    const ka = sortKey(a), kb = sortKey(b);
-    return state.sort === "title" ? ka.localeCompare(kb) : kb.localeCompare(ka);
-  });
+  rows.sort(compare);
 
   document.getElementById("summary").textContent =
     `${state.data.length} papers${state.q ? ` · ${rows.length} match` : ""}`;
@@ -119,6 +128,7 @@ function render() {
 
   list.innerHTML = rows.map(p => {
     const authors = (p.authors || []).join(", ");
+    const added = fmtAdded(p.file_mtime);
     const venue = [esc(p.journal), fmtDate(p.published)].filter(Boolean).join(" · ");
     const titleHtml = p.pdf_url
       ? `<a href="${esc(p.pdf_url)}" target="_blank" rel="noopener">${esc(p.title)}</a>`
@@ -135,7 +145,7 @@ function render() {
       ${authors ? `<div class="authors">${esc(authors)}</div>` : ""}
       ${venue ? `<div class="venue">${venue}</div>` : ""}
       ${abs}
-      <div class="row">${kind}${pdfLink}</div>
+      <div class="row">${kind}${added ? `<span class="added">Added ${added}</span>` : ""}${pdfLink}</div>
     </article>`;
   }).join("");
 
