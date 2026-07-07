@@ -12,6 +12,14 @@ cd "$REPO_DIR"
 
 LOG="$REPO_DIR/papersimreading.log"
 exec >>"$LOG" 2>&1
+
+# Prevent overlapping runs (a slow sync must not collide with the next cron tick,
+# since concurrent writers would corrupt references.json).
+exec 9>"$REPO_DIR/.sync.lock"
+if ! flock -n 9; then
+  echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) another run holds the lock; skipping"
+  exit 0
+fi
 echo "===== $(date -u +%Y-%m-%dT%H:%M:%SZ) run start ====="
 
 # Make sure the local Dropbox copy is current before scanning (best effort).

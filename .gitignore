@@ -221,3 +221,4 @@ __marimo__/
 papersimreading.log
 config.json
 /scratch/
+.sync.lock
