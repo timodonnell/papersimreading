@@ -1,0 +1,236 @@
+"""Resolve bibliographic metadata for a paper from public sources.
+
+Order of preference, most authoritative first:
+  1. Crossref by DOI          (journal articles, most preprints have a DOI)
+  2. arXiv API by arXiv id     (arXiv preprints)
+  3. Crossref by title         (when only a title could be extracted)
+  4. LLM over first-page text  (only if an API key is configured)
+
+Each resolver returns a partial Record dict; the caller merges them and fills
+gaps (e.g. abstract from the PDF text) afterwards.
+"""
+
+from __future__ import annotations
+
+import html
+import re
+import time
+import xml.etree.ElementTree as ET
+from difflib import SequenceMatcher
+
+import requests
+
+_SESSION = requests.Session()
+
+
+def _ua(mailto: str) -> dict:
+    return {"User-Agent": f"papersimreading/0.1 (mailto:{mailto})"}
+
+
+def _strip_jats(abstract: str) -> str:
+    """Crossref abstracts are JATS XML fragments; reduce to plain text."""
+    if not abstract:
+        return ""
+    text = re.sub(r"<[^>]+>", " ", abstract)
+    text = html.unescape(text)
+    text = re.sub(r"\s+", " ", text).strip()
+    # Crossref often prefixes the literal word "Abstract".
+    return re.sub(r"^abstract\s*", "", text, flags=re.IGNORECASE).strip()
+
+
+def _strip_tags(s: str) -> str:
+    if not s:
+        return ""
+    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", s))).strip()
+
+
+def _crossref_item_to_record(item: dict) -> dict:
+    title = (item.get("title") or [""])[0].strip()
+    authors = []
+    for a in item.get("author", []) or []:
+        name = " ".join(p for p in (a.get("given"), a.get("family")) if p).strip()
+        if name:
+            authors.append(name)
+    journal = (item.get("container-title") or [""])
+    journal = journal[0] if journal else ""
+    # Publisher stands in for venue on preprint servers with no container title.
+    if not journal:
+        journal = item.get("publisher", "") or ""
+
+    date_parts = (
+        item.get("published", {}).get("date-parts")
+        or item.get("published-online", {}).get("date-parts")
+        or item.get("published-print", {}).get("date-parts")
+        or item.get("issued", {}).get("date-parts")
+        or [[]]
+    )[0]
+    published = "-".join(f"{p:02d}" if i else str(p) for i, p in enumerate(date_parts))
+
+    return {
+        "title": _strip_tags(title),
+        "authors": authors,
+        "journal": _strip_tags(journal),
+        "published": published,
+        "doi": item.get("DOI", ""),
+        "abstract": _strip_jats(item.get("abstract", "")),
+        "extraction": "crossref",
+    }
+
+
+def crossref_by_doi(doi: str, mailto: str) -> dict | None:
+    try:
+        r = _SESSION.get(
+            f"https://api.crossref.org/works/{requests.utils.quote(doi)}",
+            headers=_ua(mailto),
+            timeout=30,
+        )
+        if r.status_code != 200:
+            return None
+        return _crossref_item_to_record(r.json()["message"])
+    except (requests.RequestException, KeyError, ValueError):
+        return None
+
+
+def _similar(a: str, b: str) -> float:
+    return SequenceMatcher(None, a.lower(), b.lower()).ratio()
+
+
+def _title_matches(query: str, candidate: str) -> bool:
+    """Accept a Crossref hit for a title query.
+
+    The query title is often truncated (first line of a wrapped title) or has
+    minor OCR/whitespace noise, so a plain ratio is too strict. Accept if the
+    strings are similar OR the (shorter) query is largely contained in the
+    candidate as a token subsequence.
+    """
+    q, c = query.lower(), candidate.lower()
+    if _similar(q, c) >= 0.82:
+        return True
+    q_tok = set(re.findall(r"[a-z0-9]+", q))
+    c_tok = set(re.findall(r"[a-z0-9]+", c))
+    if len(q_tok) >= 4 and len(q_tok & c_tok) / len(q_tok) >= 0.85:
+        return True
+    return False
+
+
+def crossref_by_title(title: str, mailto: str) -> dict | None:
+    try:
+        r = _SESSION.get(
+            "https://api.crossref.org/works",
+            params={"query.bibliographic": title, "rows": 3},
+            headers=_ua(mailto),
+            timeout=30,
+        )
+        if r.status_code != 200:
+            return None
+        items = r.json()["message"]["items"]
+    except (requests.RequestException, KeyError, ValueError):
+        return None
+
+    for item in items:
+        cand = (item.get("title") or [""])[0]
+        if cand and _title_matches(title, cand):
+            rec = _crossref_item_to_record(item)
+            rec["extraction"] = "crossref-title"
+            return rec
+    return None
+
+
+def arxiv_by_id(arxiv_id: str) -> dict | None:
+    try:
+        r = _SESSION.get(
+            "http://export.arxiv.org/api/query",
+            params={"id_list": arxiv_id, "max_results": 1},
+            timeout=30,
+        )
+        if r.status_code != 200:
+            return None
+        root = ET.fromstring(r.text)
+    except (requests.RequestException, ET.ParseError):
+        return None
+
+    ns = {"a": "http://www.w3.org/2005/Atom"}
+    entry = root.find("a:entry", ns)
+    if entry is None:
+        return None
+
+    def text(tag: str) -> str:
+        el = entry.find(f"a:{tag}", ns)
+        return (el.text or "").strip() if el is not None else ""
+
+    authors = [
+        (a.find("a:name", ns).text or "").strip()
+        for a in entry.findall("a:author", ns)
+        if a.find("a:name", ns) is not None
+    ]
+    published = text("published")[:10]  # YYYY-MM-DD
+    # A DOI is present once the preprint is published in a journal.
+    doi_el = entry.find("{http://arxiv.org/schemas/atom}doi")
+    return {
+        "title": re.sub(r"\s+", " ", text("title")).strip(),
+        "authors": authors,
+        "journal": "arXiv",
+        "published": published,
+        "doi": (doi_el.text or "").strip() if doi_el is not None else "",
+        "arxiv_id": arxiv_id,
+        "abstract": re.sub(r"\s+", " ", text("summary")).strip(),
+        "extraction": "arxiv",
+    }
+
+
+def llm_extract(first_page_text: str, api_key: str, model: str) -> dict | None:
+    """Ask an LLM to pull structured fields from messy first-page text.
+
+    Used only when identifier and title lookups all fail. Calls the Anthropic
+    API directly over HTTP so no SDK dependency is required.
+    """
+    if not first_page_text.strip():
+        return None
+    prompt = (
+        "Extract bibliographic metadata from the first page of this academic "
+        "paper. Return ONLY a JSON object with keys: title (string), authors "
+        "(array of full-name strings), journal (string, the venue/journal or "
+        '"" if unknown), published (string "YYYY-MM-DD" or "YYYY" or ""), '
+        "abstract (string, the paper's abstract verbatim or \"\" if not "
+        "present), doi (string or \"\"). Do not invent values; use \"\" when "
+        "unsure.\n\n---FIRST PAGE---\n" + first_page_text[:6000]
+    )
+    try:
+        r = _SESSION.post(
+            "https://api.anthropic.com/v1/messages",
+            headers={
+                "x-api-key": api_key,
+                "anthropic-version": "2023-06-01",
+                "content-type": "application/json",
+            },
+            json={
+                "model": model,
+                "max_tokens": 1500,
+                "messages": [{"role": "user", "content": prompt}],
+            },
+            timeout=60,
+        )
+        if r.status_code != 200:
+            return None
+        content = r.json()["content"][0]["text"]
+    except (requests.RequestException, KeyError, ValueError, IndexError):
+        return None
+
+    import json
+
+    m = re.search(r"\{.*\}", content, re.DOTALL)
+    if not m:
+        return None
+    try:
+        data = json.loads(m.group(0))
+    except ValueError:
+        return None
+    data["extraction"] = "llm"
+    data.setdefault("authors", [])
+    if isinstance(data.get("authors"), str):
+        data["authors"] = [data["authors"]]
+    return data
+
+
+def polite_sleep(seconds: float = 0.5) -> None:
+    time.sleep(seconds)
