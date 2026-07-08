@@ -77,6 +77,20 @@ def _crossref_item_to_record(item: dict) -> dict:
     }
 
 
+def doi_variants(doi: str):
+    """Yield the DOI and cleaned variants to try (fallbacks only).
+
+    PDF-extracted DOIs sometimes carry a trailing article id (Oxford: ".../btae547/
+    7758065") or supplement segment; stripping a trailing "/<digits>" recovers the
+    canonical DOI.
+    """
+    seen = set()
+    for cand in (doi, re.sub(r"/\d+$", "", doi)):
+        if cand and cand not in seen:
+            seen.add(cand)
+            yield cand
+
+
 def crossref_by_doi(doi: str, mailto: str) -> dict | None:
     try:
         r = _SESSION.get(
@@ -95,22 +109,74 @@ def _similar(a: str, b: str) -> float:
     return SequenceMatcher(None, a.lower(), b.lower()).ratio()
 
 
-def _title_matches(query: str, candidate: str) -> bool:
-    """Accept a Crossref hit for a title query.
+_STOPWORDS = {
+    "a", "an", "the", "of", "and", "or", "to", "in", "on", "for", "with", "by",
+    "from", "as", "at", "is", "are", "using", "via", "based",
+}
 
-    The query title is often truncated (first line of a wrapped title) or has
-    minor OCR/whitespace noise, so a plain ratio is too strict. Accept if the
-    strings are similar OR the (shorter) query is largely contained in the
-    candidate as a token subsequence.
+
+def _norm_title(s: str) -> str:
+    return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9]+", " ", s.lower())).strip()
+
+
+def _content_tokens(s: str) -> list[str]:
+    return [t for t in _norm_title(s).split() if t not in _STOPWORDS and len(t) >= 2]
+
+
+def _title_matches(query: str, candidate: str) -> bool:
+    """Accept a Crossref title hit only on strong evidence (precision-first).
+
+    A loose token overlap wrongly matches unrelated papers when the guessed
+    title is a few common words (e.g. "Series Pre-A funding" -> a paper with
+    "...Time Series..."). So accept only when the normalized strings are
+    near-identical, OR the query is a genuine prefix of the candidate (the case
+    where a real title wrapped across lines and we grabbed the first line).
     """
-    q, c = query.lower(), candidate.lower()
-    if _similar(q, c) >= 0.82:
+    q, c = _norm_title(query), _norm_title(candidate)
+    if not q or not c:
+        return False
+    if SequenceMatcher(None, q, c).ratio() >= 0.90:
         return True
-    q_tok = set(re.findall(r"[a-z0-9]+", q))
-    c_tok = set(re.findall(r"[a-z0-9]+", c))
-    if len(q_tok) >= 4 and len(q_tok & c_tok) / len(q_tok) >= 0.85:
+    if len(_content_tokens(query)) >= 4 and (c == q or c.startswith(q + " ")):
         return True
     return False
+
+
+def europepmc_abstract(doi: str) -> str:
+    """Abstract text for a DOI from Europe PMC (good coverage for life sciences)."""
+    try:
+        r = _SESSION.get(
+            "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+            params={"query": f'DOI:"{doi}"', "format": "json",
+                    "resultType": "core", "pageSize": 1},
+            timeout=30,
+        )
+        res = r.json().get("resultList", {}).get("result", [])
+    except (requests.RequestException, ValueError):
+        return ""
+    if res and res[0].get("abstractText"):
+        return _strip_tags(res[0]["abstractText"])
+    return ""
+
+
+def semanticscholar_abstract(doi: str) -> str:
+    """Abstract text for a DOI from Semantic Scholar (broader field coverage)."""
+    try:
+        r = _SESSION.get(
+            f"https://api.semanticscholar.org/graph/v1/paper/DOI:{requests.utils.quote(doi)}",
+            params={"fields": "abstract"},
+            timeout=30,
+        )
+        if r.status_code != 200:
+            return ""
+        return (r.json().get("abstract") or "").strip()
+    except (requests.RequestException, ValueError):
+        return ""
+
+
+def abstract_from_apis(doi: str) -> str:
+    """Best-effort abstract for a DOI when Crossref/arXiv didn't provide one."""
+    return europepmc_abstract(doi) or semanticscholar_abstract(doi)
 
 
 def crossref_by_title(title: str, mailto: str) -> dict | None:

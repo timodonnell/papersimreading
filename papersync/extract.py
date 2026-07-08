@@ -143,26 +143,75 @@ def _looks_like_author_line(s: str) -> bool:
 
 
 # Filenames in a curated Dropbox folder are often the identifier itself. Trying
-# these as DOIs (cheap Crossref lookups) recovers metadata for old preprints and
-# publisher PDFs whose DOI is not printed on the first page.
-_FN_DIGITS = re.compile(r"^(\d{6,})(?:\.full)?(?:-\d+)?$")
-_FN_BIORXIV_DATED = re.compile(r"^(\d{4}\.\d{2}\.\d{2}\.\d{6,})(?:v\d+)?(?:\.full)?$")
-_FN_NATURE = re.compile(r"^(s\d{5}-\d{3}-\d{4,6}-[a-z0-9]+)$", re.IGNORECASE)
+# these as DOIs (cheap Crossref lookups, validated by existence) recovers metadata
+# for publisher PDFs whose DOI is not printed on the first page. Each candidate is
+# a full DOI; a filename that IS a DOI suffix gives an essentially certain match.
+# Supplement/proof markers must be separator-delimited so they don't eat real
+# identifiers (e.g. the "s3612" of "ncomms3612").
+_FN_SUFFIX = re.compile(
+    r"[_.\-\s]+(sapp|si|supp(?:lementary)?|s\d+|full|reviewer|proof|main|r\d+)$",
+    re.IGNORECASE,
+)
+# A preprint version like "v1" attaches directly to the id.
+_FN_VERSION = re.compile(r"(?<=\d)v\d+$", re.IGNORECASE)
+_FN_BRACKET = re.compile(r"(\[\d+\])+$")
+
+_FN_BIORXIV_DATED = re.compile(r"^(\d{4}\.\d{2}\.\d{2}\.\d{6,})$")
+_FN_DIGITS = re.compile(r"^(\d{6,})$")
+_FN_NATURE_S = re.compile(r"^(s\d{5}-\d{3}-\d{4,6}-[a-z0-9]+)$", re.IGNORECASE)
+_FN_SCIENCE = re.compile(
+    r"^(science|sciadv|scitranslmed|sciimmunol|scisignal|scirobotics)\.[a-z0-9]+$",
+    re.IGNORECASE,
+)
+_FN_ANNUREV = re.compile(r"^annurev-[a-z]+-[\d-]+$", re.IGNORECASE)
+_FN_PNAS = re.compile(r"^pnas\.[\w.]+$", re.IGNORECASE)
+_FN_NCOMMS = re.compile(r"^ncomms\d+$", re.IGNORECASE)
+_FN_NATURE_ABBR = re.compile(
+    r"^(nmeth|nbt|ng|ni|nm|nrg|nri|nrc|nrd|nchembio|nsmb|nprot|nphys|nmat|nature|"
+    r"nn|nchem|ngeo)\.[\w.]+$",
+    re.IGNORECASE,
+)
+_FN_PLOS = re.compile(r"^(pone|pcbi|pgen|ppat|pbio|pmed)\.[\w.]+$", re.IGNORECASE)
+_FN_WILEY = re.compile(r"^j\.[\w.\-]+$", re.IGNORECASE)
 
 
 def filename_doi_candidates(stem: str) -> list[str]:
-    """DOIs worth trying based on the filename alone (folder-specific heuristics)."""
-    stem = stem.strip()
+    """DOIs worth trying based on the filename alone (publisher naming patterns)."""
+    s = _FN_BRACKET.sub("", stem.strip())
+    # Strip trailing supplement/version markers (e.g. ".sapp", "_r1", "v2").
+    for _ in range(4):
+        s2 = _FN_VERSION.sub("", s)
+        s2 = _FN_SUFFIX.sub("", s2)
+        if s2 == s:
+            break
+        s = s2
+
     cands: list[str] = []
-    m = _FN_BIORXIV_DATED.match(stem)
-    if m:
-        cands.append(f"10.1101/{m.group(1)}")
-    m = _FN_DIGITS.match(stem)
-    if m:
-        cands.append(f"10.1101/{m.group(1)}")  # old bioRxiv numeric ids
-    m = _FN_NATURE.match(stem)
-    if m:
-        cands.append(f"10.1038/{m.group(1)}")
+
+    def add(doi: str) -> None:
+        if doi not in cands:
+            cands.append(doi)
+
+    if _FN_BIORXIV_DATED.match(s):
+        add(f"10.1101/{s}")
+    if _FN_DIGITS.match(s):
+        add(f"10.1101/{s}")  # old bioRxiv numeric ids
+    if _FN_NATURE_S.match(s):
+        add(f"10.1038/{s}")
+    if _FN_SCIENCE.match(s):
+        add(f"10.1126/{s}")
+    if _FN_ANNUREV.match(s):
+        add(f"10.1146/{s}")
+    if _FN_PNAS.match(s):
+        add(f"10.1073/{s}")
+    if _FN_NCOMMS.match(s):
+        add(f"10.1038/{s}")
+    if _FN_NATURE_ABBR.match(s):
+        add(f"10.1038/{s}")
+    if _FN_PLOS.match(s):
+        add(f"10.1371/journal.{s}")
+    if _FN_WILEY.match(s):
+        add(f"10.1111/{s}")
     return cands
 
 

@@ -43,15 +43,18 @@ def build_record(pdf: Path, cfg: Config, rel: str, sha: str, stat) -> dict | Non
         "journal": "",
         "published": "",
         "abstract": "",
-        "doi": ids.get("doi", ""),
-        "arxiv_id": ids.get("arxiv_id", ""),
+        "doi": "",
+        "arxiv_id": "",
         "extraction": "failed",
     }
 
     resolved: dict | None = None
     if ids.get("doi"):
-        resolved = metadata.crossref_by_doi(ids["doi"], cfg.crossref_mailto)
-        metadata.polite_sleep(0.3)
+        for cand in metadata.doi_variants(ids["doi"]):
+            resolved = metadata.crossref_by_doi(cand, cfg.crossref_mailto)
+            metadata.polite_sleep(0.3)
+            if resolved:
+                break
     if resolved is None and ids.get("arxiv_id"):
         resolved = metadata.arxiv_by_id(ids["arxiv_id"])
         metadata.polite_sleep(3.0)  # arXiv asks for 1 request / 3s
@@ -61,7 +64,6 @@ def build_record(pdf: Path, cfg: Config, rel: str, sha: str, stat) -> dict | Non
             resolved = metadata.crossref_by_doi(cand_doi, cfg.crossref_mailto)
             metadata.polite_sleep(0.3)
             if resolved:
-                record["doi"] = cand_doi
                 break
     if resolved is None:
         title = extract.guess_title(text, meta)
@@ -71,16 +73,20 @@ def build_record(pdf: Path, cfg: Config, rel: str, sha: str, stat) -> dict | Non
     if resolved is None and cfg.llm_enabled:
         resolved = metadata.llm_extract(text, cfg.anthropic_api_key, cfg.anthropic_model)
 
-    if resolved:
-        for k, v in resolved.items():
-            if v:
-                record[k] = v
-
-    # Inclusion gate: without a public identifier we do not treat it as a paper.
-    if not record["doi"] and not record["arxiv_id"]:
+    # Inclusion gate: a file is a paper only if a lookup actually resolved. A DOI
+    # scraped from the PDF text is often mangled by pdftotext and must not count
+    # on its own — only validated identifiers (from a successful resolve) are kept.
+    if resolved is None:
         return None
 
-    # Abstract fallback: pull it straight from the PDF text.
+    for k, v in resolved.items():
+        if v:
+            record[k] = v
+
+    # Abstract fallbacks: many publishers (e.g. Nature) omit abstracts from
+    # Crossref, so try other abstract sources by DOI, then the PDF text itself.
+    if not record["abstract"] and record["doi"]:
+        record["abstract"] = metadata.abstract_from_apis(record["doi"])
     if not record["abstract"]:
         record["abstract"] = extract.extract_abstract_from_text(text)
 

@@ -42,6 +42,14 @@
   .paper h2 a { color: var(--fg); text-decoration: none; }
   .paper h2 a:hover { color: var(--accent); text-decoration: underline; }
   .authors { color: var(--fg); font-size: 13.5px; margin: 2px 0; }
+  .authors .auth-full { display: none; }
+  .authors.expanded .auth-short { display: none; }
+  .authors.expanded .auth-full { display: inline; }
+  .auth-omitted { color: var(--muted); }
+  .auth-toggle {
+    font-size: 12px; color: var(--accent); cursor: pointer;
+    background: none; border: none; padding: 0; margin-left: 4px; white-space: nowrap;
+  }
   .venue { color: var(--muted); font-size: 13px; margin: 2px 0 6px; }
   .abstract { font-size: 14px; color: var(--fg); margin: 8px 0 0; }
   .abstract.clamp {
@@ -127,7 +135,7 @@ function render() {
   if (!rows.length) { list.innerHTML = `<div class="empty">No matching papers.</div>`; return; }
 
   list.innerHTML = rows.map(p => {
-    const authors = (p.authors || []).join(", ");
+    const authorsHtml = renderAuthors(p.authors || []);
     const added = fmtAdded(p.file_mtime);
     const venue = [esc(p.journal), fmtDate(p.published)].filter(Boolean).join(" · ");
     const titleHtml = p.pdf_url
@@ -146,7 +154,7 @@ function render() {
          <button class="toggle">Show more</button>` : "";
     return `<article class="paper">
       <h2>${titleHtml}</h2>
-      ${authors ? `<div class="authors">${esc(authors)}</div>` : ""}
+      ${authorsHtml}
       ${venue ? `<div class="venue">${venue}</div>` : ""}
       ${abs}
       <div class="row">${added ? `<span class="added">Added ${added}</span>` : ""}${pdfLink}${doiLink}</div>
@@ -160,6 +168,34 @@ function render() {
       btn.textContent = clamped ? "Show more" : "Show less";
     });
   });
+
+  list.querySelectorAll(".auth-toggle").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const wrap = btn.closest(".authors");
+      const expanded = wrap.classList.toggle("expanded");
+      btn.textContent = expanded ? "show fewer" : `show all ${btn.dataset.n}`;
+    });
+  });
+}
+
+// Author lists up to MAX_AUTHORS are shown in full. Longer ones (e.g. large
+// consortium papers) collapse the middle, keeping the first HEAD and last TAIL
+// names, with a per-card toggle to reveal everyone.
+const MAX_AUTHORS = 20, HEAD = 8, TAIL = 4;
+
+function renderAuthors(authors) {
+  if (!authors.length) return "";
+  if (authors.length <= MAX_AUTHORS)
+    return `<div class="authors">${esc(authors.join(", "))}</div>`;
+  const head = authors.slice(0, HEAD).join(", ");
+  const tail = authors.slice(-TAIL).join(", ");
+  const hidden = authors.length - HEAD - TAIL;
+  return `<div class="authors">` +
+    `<span class="auth-short">${esc(head)} … <span class="auth-omitted">` +
+      `+${hidden} more</span> … ${esc(tail)}</span>` +
+    `<span class="auth-full">${esc(authors.join(", "))}</span> ` +
+    `<button class="auth-toggle" data-n="${authors.length}">show all ${authors.length}</button>` +
+    `</div>`;
 }
 
 document.getElementById("q").addEventListener("input", e => { state.q = e.target.value; render(); });
