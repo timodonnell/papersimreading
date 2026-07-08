@@ -146,11 +146,19 @@ function render() {
     const pdfLink = p.pdf_url
       ? `<a class="pdf" href="${esc(p.pdf_url)}" target="_blank" rel="noopener">${
            PDF_LABEL[p.pdf_url_kind] || "PDF ↗"}</a>` : "";
+    // Free HTML edition, labeled by source.
+    const htmlLabel = !p.html_url ? "" :
+      p.html_url.includes("/pmc") ? "PMC HTML ↗" :
+      p.html_url.includes("arxiv.org") ? "arXiv HTML ↗" :
+      /biorxiv|medrxiv/.test(p.html_url) ? "bioRxiv HTML ↗" : "HTML ↗";
     const htmlLink = p.html_url
-      ? `<a class="pdf" href="${esc(p.html_url)}" target="_blank" rel="noopener">HTML ↗</a>` : "";
-    // Always offer a canonical DOI link too (unless the PDF link already is it).
-    const doiLink = (p.doi_url && p.pdf_url_kind !== "doi")
-      ? `<a class="pdf" href="${esc(p.doi_url)}" target="_blank" rel="noopener">doi.org ↗</a>` : "";
+      ? `<a class="pdf" href="${esc(p.html_url)}" target="_blank" rel="noopener">${htmlLabel}</a>` : "";
+    // Journal article page (publisher HTML via DOI), for real journal DOIs —
+    // may be paywalled. Skipped for bioRxiv/medRxiv DOIs (covered above) and when
+    // the PDF link already is the DOI page.
+    const isPreprintDoi = (p.doi_url || "").includes("/10.1101/");
+    const journalLink = (p.doi_url && !isPreprintDoi && p.pdf_url !== p.doi_url)
+      ? `<a class="pdf" href="${esc(p.doi_url)}" target="_blank" rel="noopener">Journal ↗</a>` : "";
     const abs = p.abstract
       ? `<p class="abstract clamp">${esc(p.abstract)}</p>
          <button class="toggle">Show more</button>` : "";
@@ -159,7 +167,7 @@ function render() {
       ${authorsHtml}
       ${venue ? `<div class="venue">${venue}</div>` : ""}
       ${abs}
-      <div class="row">${added ? `<span class="added">Added ${added}</span>` : ""}${pdfLink}${htmlLink}${doiLink}</div>
+      <div class="row">${added ? `<span class="added">Added ${added}</span>` : ""}${pdfLink}${htmlLink}${journalLink}</div>
     </article>`;
   }).join("");
 
