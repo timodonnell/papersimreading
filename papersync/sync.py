@@ -101,6 +101,7 @@ def build_record(pdf: Path, cfg: Config, rel: str, sha: str, stat) -> dict | Non
         }
     )
     links.resolve_links(record, pdf, cfg)
+    links.resolve_html(record)
     return record
 
 

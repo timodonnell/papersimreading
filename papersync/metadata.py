@@ -321,5 +321,69 @@ def unpaywall_oa(doi: str, mailto: str) -> str | None:
     return loc.get("url_for_pdf") or loc.get("url") or None
 
 
+def arxiv_html_url(arxiv_id: str) -> str:
+    """arXiv's native HTML page if it exists (arXiv returns 404 when it doesn't)."""
+    url = f"https://arxiv.org/html/{arxiv_id}"
+    try:
+        r = _SESSION.get(
+            url, timeout=25, stream=True,
+            headers={"User-Agent": "Mozilla/5.0 papersimreading"},
+        )
+        ok = r.status_code == 200
+        r.close()
+    except requests.RequestException:
+        return ""
+    return url if ok else ""
+
+
+def biorxiv_latest(doi: str) -> tuple[str, int] | None:
+    """(host, latest version number) for a bioRxiv/medRxiv 10.1101 DOI, else None.
+
+    Uses the biorxiv API (not Cloudflare-gated) to find the highest version.
+    """
+    if not doi.startswith("10.1101/"):
+        return None
+    for server, host in (("biorxiv", "www.biorxiv.org"), ("medrxiv", "www.medrxiv.org")):
+        try:
+            r = _SESSION.get(f"https://api.biorxiv.org/details/{server}/{doi}", timeout=30)
+            coll = r.json().get("collection", [])
+        except (requests.RequestException, ValueError):
+            continue
+        versions = [int(c["version"]) for c in coll
+                    if str(c.get("version", "")).isdigit()]
+        if versions:
+            return host, max(versions)
+    return None
+
+
+def biorxiv_html_url(doi: str) -> str:
+    """Full-text HTML page for the latest bioRxiv/medRxiv version."""
+    info = biorxiv_latest(doi)
+    return f"https://{info[0]}/content/{doi}v{info[1]}.full" if info else ""
+
+
+def biorxiv_pdf_url(doi: str) -> str:
+    """PDF of the latest bioRxiv/medRxiv version (not the user's saved copy)."""
+    info = biorxiv_latest(doi)
+    return f"https://{info[0]}/content/{doi}v{info[1]}.full.pdf" if info else ""
+
+
+def pmc_html_url(doi: str) -> str:
+    """PubMed Central HTML full text if a PMC id exists for this DOI."""
+    try:
+        r = _SESSION.get(
+            "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+            params={"query": f'DOI:"{doi}"', "format": "json",
+                    "resultType": "lite", "pageSize": 1},
+            timeout=30,
+        )
+        res = r.json().get("resultList", {}).get("result", [])
+    except (requests.RequestException, ValueError):
+        return ""
+    if res and res[0].get("pmcid"):
+        return f"https://pmc.ncbi.nlm.nih.gov/articles/{res[0]['pmcid']}/"
+    return ""
+
+
 def polite_sleep(seconds: float = 0.5) -> None:
     time.sleep(seconds)

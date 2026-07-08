@@ -21,6 +21,8 @@ so those filenames never reach the repo and are not re-processed each run.
 (resolved via [Unpaywall](https://unpaywall.org/)). Paywalled papers (a DOI, but
 no open copy) link to the user's own PDF in Dropbox. So a Dropbox share link is
 only ever generated for an identified paper — never for an unrecognized file.
+When an HTML edition exists (arXiv native HTML or a PubMed Central full-text
+page), it is linked too.
 
 ## How it works
 
@@ -101,7 +103,8 @@ this machine (not a cloud agent). Logs go to `papersimreading.log` (git-ignored)
 | Path | Purpose |
 |------|---------|
 | `papersync/` | the sync pipeline (config, PDF extraction, metadata lookups, links, store) |
-| `papersync/refresh_links.py` | re-resolve links for existing records (`python -m papersync.refresh_links`) |
+| `papersync/refresh_links.py` | re-resolve pdf links for existing records (`python -m papersync.refresh_links`) |
+| `papersync/refresh_html.py` | backfill HTML-version links (arXiv/PMC) for existing records |
 | `data/references.json` | the reference database (source of truth for the page) |
 | `.papersync-excluded.json` | local, git-ignored memory of non-paper files (kept out of the repo) |
 | `index.html` | the GitHub Pages site, renders `references.json` client-side |

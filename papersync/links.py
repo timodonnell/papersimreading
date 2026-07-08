@@ -20,6 +20,8 @@ from .sharelink import dropbox_sharelink
 
 # Bump when the link policy changes, so refresh_links re-resolves old records.
 LINKS_VERSION = 2
+# Bump when HTML resolution changes, so refresh_html re-resolves old records.
+HTML_VERSION = 2
 
 
 def resolve_links(record: dict, pdf_path: Path | None, cfg: Config) -> None:
@@ -31,6 +33,14 @@ def resolve_links(record: dict, pdf_path: Path | None, cfg: Config) -> None:
         record["pdf_url"] = f"https://arxiv.org/abs/{record['arxiv_id']}"
         record["pdf_url_kind"] = "arxiv"
         return
+
+    # bioRxiv/medRxiv: link the latest version's PDF, not the user's saved copy.
+    if doi.startswith("10.1101/"):
+        biorxiv_pdf = metadata.biorxiv_pdf_url(doi)
+        if biorxiv_pdf:
+            record["pdf_url"] = biorxiv_pdf
+            record["pdf_url_kind"] = "oa"
+            return
 
     if doi:
         oa = metadata.unpaywall_oa(doi, cfg.crossref_mailto)
@@ -53,3 +63,21 @@ def resolve_links(record: dict, pdf_path: Path | None, cfg: Config) -> None:
 
     record["pdf_url"] = ""
     record["pdf_url_kind"] = "none"
+
+
+def resolve_html(record: dict) -> None:
+    """Set record['html_url'] to a readable HTML version when one exists.
+
+    arXiv's native HTML for arXiv papers; PubMed Central for papers with a PMC id.
+    Left empty when no HTML edition is available.
+    """
+    record["html_v"] = HTML_VERSION
+    doi = record.get("doi", "")
+    url = ""
+    if record.get("arxiv_id"):
+        url = metadata.arxiv_html_url(record["arxiv_id"])
+    if not url and doi.startswith("10.1101/"):
+        url = metadata.biorxiv_html_url(doi)
+    if not url and doi:
+        url = metadata.pmc_html_url(doi)
+    record["html_url"] = url

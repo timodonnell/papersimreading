@@ -146,6 +146,8 @@ function render() {
     const pdfLink = p.pdf_url
       ? `<a class="pdf" href="${esc(p.pdf_url)}" target="_blank" rel="noopener">${
            PDF_LABEL[p.pdf_url_kind] || "PDF ↗"}</a>` : "";
+    const htmlLink = p.html_url
+      ? `<a class="pdf" href="${esc(p.html_url)}" target="_blank" rel="noopener">HTML ↗</a>` : "";
     // Always offer a canonical DOI link too (unless the PDF link already is it).
     const doiLink = (p.doi_url && p.pdf_url_kind !== "doi")
       ? `<a class="pdf" href="${esc(p.doi_url)}" target="_blank" rel="noopener">doi.org ↗</a>` : "";
@@ -157,7 +159,7 @@ function render() {
       ${authorsHtml}
       ${venue ? `<div class="venue">${venue}</div>` : ""}
       ${abs}
-      <div class="row">${added ? `<span class="added">Added ${added}</span>` : ""}${pdfLink}${doiLink}</div>
+      <div class="row">${added ? `<span class="added">Added ${added}</span>` : ""}${pdfLink}${htmlLink}${doiLink}</div>
     </article>`;
   }).join("");
 
