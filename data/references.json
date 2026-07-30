@@ -1,5 +1,37 @@
 [
   {
+    "title": "LAB-Bench: Measuring Capabilities of Language Models for Biology Research",
+    "authors": [
+      "Jon M. Laurent",
+      "Joseph D. Janizek",
+      "Michael Ruzo",
+      "Michaela M. Hinks",
+      "Michael J. Hammerling",
+      "Siddharth Narayanan",
+      "Manvitha Ponnapati",
+      "Andrew D. White",
+      "Samuel G. Rodriques"
+    ],
+    "journal": "arXiv",
+    "published": "2024-07-14",
+    "abstract": "There is widespread optimism that frontier Large Language Models (LLMs) and LLM-augmented systems have the potential to rapidly accelerate scientific discovery across disciplines. Today, many benchmarks exist to measure LLM knowledge and reasoning on textbook-style science questions, but few if any benchmarks are designed to evaluate language model performance on practical tasks required for scientific research, such as literature search, protocol planning, and data analysis. As a step toward building such benchmarks, we introduce the Language Agent Biology Benchmark (LAB-Bench), a broad dataset of over 2,400 multiple choice questions for evaluating AI systems on a range of practical biology research capabilities, including recall and reasoning over literature, interpretation of figures, access and navigation of databases, and comprehension and manipulation of DNA and protein sequences. Importantly, in contrast to previous scientific benchmarks, we expect that an AI system that can achieve consistently high scores on the more difficult LAB-Bench tasks would serve as a useful assistant for researchers in areas such as literature search and molecular cloning. As an initial assessment of the emergent scientific task capabilities of frontier language models, we measure performance of several against our benchmark and report results compared to human expert biology researchers. We will continue to update and expand LAB-Bench over time, and expect it to serve as a useful tool in the development of automated research systems going forward. A public subset of LAB-Bench is available for use at the following URL: https://huggingface.co/datasets/futurehouse/lab-bench",
+    "doi": "",
+    "arxiv_id": "2407.10362",
+    "extraction": "arxiv",
+    "id": "7c781a703287616d",
+    "file": "2407.10362v3.pdf",
+    "file_sha256": "7c781a703287616d6561e0ce50aed494946c7609a5a1b5985fb7849ce9e884dd",
+    "file_size": 9890877,
+    "file_mtime": 1785441585,
+    "added_at": "2026-07-30T20:00:06Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2407.10362",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2407.10362"
+  },
+  {
     "title": "Deep-learning predictions of biomolecular structures : persistent limitations and new horizons extended by explicit ion addition",
     "authors": [
       "Jules Marien",
