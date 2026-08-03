@@ -1,5 +1,33 @@
 [
   {
+    "title": "PG-LLM: Benchmarking General-Purpose Language Models for Protein Variant Ranking",
+    "authors": [
+      "Rohit Krishan Arora",
+      "Leo Tianlai Chen",
+      "Melissa Du",
+      "Debora Marks",
+      "George Church"
+    ],
+    "journal": "openRxiv",
+    "published": "2026-07-28",
+    "abstract": "eneral-purpose language models are being increasingly utilized in protein-design workflows, yet their ability to evaluate variant effects remains unclear. To answer this question, we introduce PG-LLM, a benchmark built on ProteinGym to evaluate general-purpose language models on 217 protein-variant prioritization tasks. Each task follows the same format: a language model receives a wild-type protein sequence, an assay description, and is tasked with ranking 50 mutant sequences by fitness without access to multiple-sequence alignments or protein structures. We evaluate thirteen language models and rescore 95 published protein predictors on the same candidate sets with the same evaluation metric. Claude Opus 5 leads the primary leaderboard with a Spearman correlation of ρ = 0.406, narrowly ahead of GPT-5.6 Sol at 0.402. However, GPT-5.6 Sol scores higher than Opus 5 when the two models are compared only on assays scored by both. Opus 5 outperforms 49 of 95 published protein predictors, including 41 of 46 sequence-only methods, and approaches ESM2-650M at ρ = 0.411, but remains below the leading predictor VenusREM at ρ = 0.523. Variant-ranking performance improves with test-time compute across GPT, Claude, and Gemini models, but the gains taper before closing the gap to specialist protein predictors. Unlike sequence-only predictors, which perform better on proteins with deeper evolutionary alignments, LLM accuracy changes little across alignment-depth. To address contamination risk, we additionally source 59 DMS assays from 19 studies whose scores first became public after January 2026. On this set, we evaluate three LLMs and seven biomolecular baselines, observing performance trends similar to those on the main PG-LLM benchmark. PG-LLM shows that tool-free language models capture substantial protein-variant signal and already outperform many established sequence-based predictors. These results establish the emerging capability of language models as biomolecular reasoners while defining the remaining headroom for their reliable use in variant-prioritization workflows.",
+    "doi": "10.64898/2026.07.27.741045",
+    "arxiv_id": "",
+    "extraction": "crossref",
+    "id": "69e947082acc7972",
+    "file": "2026.07.27.741045v2.full.pdf",
+    "file_sha256": "69e947082acc79721cfa905d436fa13964cd4c7509a258f34232b8525ccd0584",
+    "file_size": 767967,
+    "file_mtime": 1785777257,
+    "added_at": "2026-08-03T18:00:02Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.64898/2026.07.27.741045",
+    "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2026/07/28/2026.07.27.741045.full.pdf",
+    "pdf_url_kind": "oa",
+    "html_v": 2,
+    "html_url": ""
+  },
+  {
     "title": "DoReMi: Optimizing Data Mixtures Speeds Up Language Model Pretraining",
     "authors": [
       "Sang Michael Xie",
