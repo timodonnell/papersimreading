@@ -1,5 +1,32 @@
 [
   {
+    "title": "AA-Omniscience: Evaluating Cross-Domain Knowledge Reliability in Large Language Models",
+    "authors": [
+      "Declan Jackson",
+      "William Keating",
+      "George Cameron",
+      "Micah Hill-Smith"
+    ],
+    "journal": "arXiv",
+    "published": "2025-11-17",
+    "abstract": "Existing language model evaluations primarily measure general capabilities, yet reliable use of these models across a range of domains demands factual accuracy and recognition of knowledge gaps. We introduce AA-Omniscience, a benchmark designed to measure both factual recall and knowledge calibration across 6,000 questions. Questions are derived from authoritative academic and industry sources, and cover 42 economically relevant topics within six different domains. The evaluation measures a model's Omniscience Index, a bounded metric (-100 to 100) measuring factual recall that jointly penalizes hallucinations and rewards abstention when uncertain, with 0 equating to a model that answers questions correctly as much as it does incorrectly. Among evaluated models, Claude 4.1 Opus attains the highest score (4.8), making it one of only three models to score above zero. These results reveal persistent factuality and calibration weaknesses across frontier models. Performance also varies by domain, with the models from three different research labs leading across the six domains. This performance variability suggests models should be chosen according to the demands of the use case rather than general performance for tasks where knowledge is important.",
+    "doi": "",
+    "arxiv_id": "2511.13029",
+    "extraction": "arxiv",
+    "id": "abedc69e8235329c",
+    "file": "2511.13029v1.pdf",
+    "file_sha256": "abedc69e8235329cbfe0fe49cc33928a5b1732bc054637328c00b07f588b5dfa",
+    "file_size": 3786016,
+    "file_mtime": 1785863178,
+    "added_at": "2026-08-04T18:00:07Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2511.13029",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2511.13029"
+  },
+  {
     "title": "SciCode: A Research Coding Benchmark Curated by Scientists",
     "authors": [
       "Minyang Tian",
