@@ -1,5 +1,63 @@
 [
   {
+    "title": "HARBOR: A Harness Framework for Agentic Robot Reinforcement Learning",
+    "authors": [
+      "Zechu Li",
+      "Yufeng Jin",
+      "Xiaoyang Liu",
+      "Puze Liu",
+      "Vignesh Prasad",
+      "Carlo D'Eramo",
+      "Georgia Chalvatzaki"
+    ],
+    "journal": "arXiv",
+    "published": "2026-06-07",
+    "abstract": "Reinforcement learning (RL) has become a powerful paradigm for robot learning, particularly in sim-to-real settings, but its broader adoption remains limited by the engineering pipeline surrounding the algorithms. Building tasks, shaping rewards, and tuning hyperparameters require substantial expert effort, making RL workflows costly and difficult to scale. We introduce HARBOR, an agentic framework that frames robot RL automation as a harness-engineering problem: given a simulator codebase and a task specification, it automates the workflow from environment setup to policy training in simulation. HARBOR decomposes such high-level objectives into bounded stages executed by specialized agents through standardized commands, persistent artifacts, executable gates, and reusable knowledge, and scales iteration via decentralized parallel trials and experience learning across runs. We evaluate HARBOR across 6 benchmarks and 16 tasks in total, spanning manipulation, locomotion, and bimanual dexterous control. We demonstrate that HARBOR automates the simulation RL workflow end-to-end, designs rewards, tunes algorithms to match or improve over default configurations, and reduces engineering effort at practical token and wall-clock cost; the resulting policies can also be transferred to real robots.",
+    "doi": "",
+    "arxiv_id": "2606.08610",
+    "extraction": "arxiv",
+    "id": "830526ebadbe1786",
+    "file": "2606.08610v1.pdf",
+    "file_sha256": "830526ebadbe17865d27b0a67b2b5577b85e4522ff700132a987992cb17c2222",
+    "file_size": 35184622,
+    "file_mtime": 1785873019,
+    "added_at": "2026-08-04T20:00:09Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2606.08610",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2606.08610"
+  },
+  {
+    "title": "SERA: Soft-Verified Efficient Repository Agents",
+    "authors": [
+      "Ethan Shen",
+      "Daniel Tormoen",
+      "Saurabh Shah",
+      "Ali Farhadi",
+      "Tim Dettmers"
+    ],
+    "journal": "arXiv",
+    "published": "2026-01-28",
+    "abstract": "Open-weight coding agents should hold a fundamental advantage over closed-source systems because they can specialize to private codebases, encoding repository-specific information directly in their weights. Yet the cost and complexity of training has kept this advantage theoretical until now. We present Soft-Verified Efficient Repository Agents (SERA), an efficient method for training coding agents that enables the rapid and cheap creation of agents specialized to private codebases. Using Soft Verified Generation (SVG), we generate thousands of trajectories from any code repository, without requiring unit tests. Beyond repository specialization, we apply SVG to a larger corpus of codebases, generating 200,000+ synthetic trajectories. Using only supervised finetuning (SFT), SERA achieves leading results among fully open-source (open data, method, code) models while matching the performance of open-weight models like Devstral-Small-2. Creating SERA models is 26x cheaper than reinforcement learning and 57x cheaper than previous synthetic data methods to reach equivalent performance. We use our dataset to provide detailed analysis of scaling laws, ablations, and confounding factors for training coding agents. Overall, we believe our work will greatly accelerate research on open coding agents and showcase the advantage of open-source models that can adapt to private codebases. We release SERA as the first model in Ai2's Open Coding Agents series, along with all our code, data, and Claude Code integration to support the research community.",
+    "doi": "",
+    "arxiv_id": "2601.20789",
+    "extraction": "arxiv",
+    "id": "ebb3a6988ceb7e87",
+    "file": "2601.20789v3.pdf",
+    "file_sha256": "ebb3a6988ceb7e872762c3d3df19ef0a71aedfbdfb968340f5d85174af8ea55c",
+    "file_size": 955148,
+    "file_mtime": 1785870184,
+    "added_at": "2026-08-04T20:00:05Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2601.20789",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2601.20789"
+  },
+  {
     "title": "AA-Omniscience: Evaluating Cross-Domain Knowledge Reliability in Large Language Models",
     "authors": [
       "Declan Jackson",
