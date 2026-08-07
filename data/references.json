@@ -1,5 +1,31 @@
 [
   {
+    "title": "Equivariant Quantum Graph Circuits",
+    "authors": [
+      "Péter Mernyei",
+      "Konstantinos Meichanetzidis",
+      "İsmail İlkan Ceylan"
+    ],
+    "journal": "arXiv",
+    "published": "2021-12-10",
+    "abstract": "We investigate quantum circuits for graph representation learning, and propose equivariant quantum graph circuits (EQGCs), as a class of parameterized quantum circuits with strong relational inductive bias for learning over graph-structured data. Conceptually, EQGCs serve as a unifying framework for quantum graph representation learning, allowing us to define several interesting subclasses which subsume existing proposals. In terms of the representation power, we prove that the studied subclasses of EQGCs are universal approximators for functions over the bounded graph domain. This theoretical perspective on quantum graph machine learning methods opens many directions for further work, and could lead to models with capabilities beyond those of classical approaches. We empirically verify the expressive power of EQGCs through a dedicated experiment on synthetic data, and additionally observe that the performance of EQGCs scales well with the depth of the model and does not suffer from barren plateu issues.",
+    "doi": "",
+    "arxiv_id": "2112.05261",
+    "extraction": "arxiv",
+    "id": "538e1e67f30c25a3",
+    "file": "2112.05261v3.pdf",
+    "file_sha256": "538e1e67f30c25a3cf1dad4fa65bdefbbebad6f6b13a975885468988e5ce7c0d",
+    "file_size": 859505,
+    "file_mtime": 1786124963,
+    "added_at": "2026-08-07T18:00:05Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2112.05261",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": ""
+  },
+  {
     "title": "Boltz-Perturb: Improving Diversity and Accuracy in Protein-Ligand Co-Folding through Training-Free Conditioning Perturbation",
     "authors": [
       "Hyeyun Jung",
