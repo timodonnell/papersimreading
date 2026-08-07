@@ -1,5 +1,31 @@
 [
   {
+    "title": "Boltz-Perturb: Improving Diversity and Accuracy in Protein-Ligand Co-Folding through Training-Free Conditioning Perturbation",
+    "authors": [
+      "Hyeyun Jung",
+      "BoRam Lee",
+      "Alan C. Cheng"
+    ],
+    "journal": "openRxiv",
+    "published": "2026-08-05",
+    "abstract": "Protein-ligand co-folding models hold promise in structure-based drug discovery and small molecule interaction prediction, but often fail in predicting correct small molecule binding poses. We present Boltz-Perturb, a framework for addressing this through perturbing model conditioning signals during model inference, and show that such perturbations improve correct ligand binding mode predictions. We first show with true-coordinate injection experiments that the model's learned energy landscape contains correct binding-mode basins, allowing us to reframe the problem as one of sampling deficiency. We then introduce two inference-time perturbation strategies, Token Bias Perturbation (TBP) and Token Conditioning Perturbation (TCP), which increase exploration of alternative binding poses. Across diverse protein-ligand systems, TCP improves top-20 oracle success rates by 2.6 to 7.8 fold. Boltz-Perturb attains higher oracle success rates compared to the Boltz-2 high diffusion temperature variant while requiring over 75% less compute. To our knowledge, this is the first systematic perturbation analysis of a co-folding architecture for small-molecule binding mode diversity. We demonstrate that inference-time perturbations can unlock latent structural diversity in generative co-folding models and improve protein-ligand predictions without costly retraining.",
+    "doi": "10.64898/2026.08.05.742877",
+    "arxiv_id": "",
+    "extraction": "crossref",
+    "id": "1cdd72caf1e194f2",
+    "file": "2026.08.05.742877v1.full.pdf",
+    "file_sha256": "1cdd72caf1e194f21f6716f408d1d10e99249eb59cbcb9138ecb286d26cbcdf9",
+    "file_size": 2727360,
+    "file_mtime": 1786061251,
+    "added_at": "2026-08-07T01:00:02Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.64898/2026.08.05.742877",
+    "pdf_url": "https://www.dropbox.com/scl/fi/nu803d102o4jotkqd0kr9/2026.08.05.742877v1.full.pdf?rlkey=47aow4g54qkzaksry01x2nne3&dl=0",
+    "pdf_url_kind": "dropbox",
+    "html_v": 2,
+    "html_url": ""
+  },
+  {
     "title": "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning",
     "authors": [
       "Lakshya A Agrawal",
