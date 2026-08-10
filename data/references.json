@@ -1,5 +1,40 @@
 [
   {
+    "title": "RNAGym: Large-scale Benchmarks for RNA Fitness and Structure Prediction",
+    "authors": [
+      "Rohit Arora",
+      "Murphy Angelo",
+      "Christian Andrew Choe",
+      "Courtney A. Shearer",
+      "Aaron W. Kollasch",
+      "Fiona Qu",
+      "Ruben Weitzman",
+      "Artem Gazizov",
+      "Sarah Gurev",
+      "Erik Xie",
+      "Debora S. Marks",
+      "Pascal Notin"
+    ],
+    "journal": "openRxiv",
+    "published": "2025-06-17",
+    "abstract": "Understanding RNA structure and predicting the functional consequences of mutations are fundamental challenges in computational biology with broad implications for therapeutic development and synthetic biology. Current evaluation of machine learning-based RNA models suffers from disparate experimental datasets and inconsistent performance assessments across different RNA families. To address these challenges, we introduce RNAGym, a large-scale benchmarking framework specifically designed for three core tasks–RNA fitness, secondary structure, and tertiary structure prediction. The framework integrates extensive datasets, including 70 standardized deep mutational scanning assays covering over a million mutations across diverse RNA types; 901k chemical-mapping reactivity profiles for secondary structure; and 215 diverse tertiary structures curated from the PDB. RNAGym is designed to facilitate a systematic comparison of RNA models, offering an essential resource to enhance the understanding and development of these models.",
+    "doi": "10.1101/2025.06.16.660049",
+    "arxiv_id": "",
+    "extraction": "crossref",
+    "id": "ab681f713ded20c3",
+    "file": "2025.06.16.660049v1.full.pdf",
+    "file_sha256": "ab681f713ded20c30c60feb92b76874fd838c5ded6ef4d9f25e6d4fbdb5a8de3",
+    "file_size": 5476341,
+    "file_mtime": 1786395671,
+    "added_at": "2026-08-10T22:00:07Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.1101/2025.06.16.660049",
+    "pdf_url": "https://www.biorxiv.org/content/10.1101/2025.06.16.660049v1.full.pdf",
+    "pdf_url_kind": "oa",
+    "html_v": 2,
+    "html_url": "https://www.biorxiv.org/content/10.1101/2025.06.16.660049v1.full"
+  },
+  {
     "title": "LiveProteinBench: A Contamination-Free Benchmark for Assessing Models' Specialized Capabilities in Protein Science",
     "authors": [
       "Dingyi Rong",
