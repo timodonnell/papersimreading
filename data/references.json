@@ -1,5 +1,35 @@
 [
   {
+    "title": "LiveProteinBench: A Contamination-Free Benchmark for Assessing Models' Specialized Capabilities in Protein Science",
+    "authors": [
+      "Dingyi Rong",
+      "Zijian Chen",
+      "Qi Jia",
+      "Kaiwei Zhang",
+      "Haotian Lu",
+      "Guangtao Zhai",
+      "Ning Liu"
+    ],
+    "journal": "arXiv",
+    "published": "2025-12-24",
+    "abstract": "In contrast to their remarkable performance on general knowledge QA, the true abilities of Large Language Models (LLMs) in tasks demanding deep, specialized reasoning, such as in protein biology, have yet to be thoroughly investigated. Current benchmarks suffer from critical deficiencies, such as data contamination due to outdated test sets, insufficient focus on essential protein-specific tasks, and a neglect of multimodal assessments. To resolve these issues, we introduce LiveProteinBench, a contamination-free, multimodal benchmark of 12 tasks for evaluating LLM performance on protein property and function prediction. Its central innovation lies in a test set composed exclusively of proteins validated after the start of 2025, guaranteeing that the data is novel to all tested models. We benchmarked a suite of prominent general-purpose LLMs and specialized biological LLMs using both unimodal and multimodal input schemes. Our results show that: 1) General-purpose proprietary large models demonstrate superior zero-shot performance when encountering new protein data, outperforming their open-source and domain-specific counterparts by over 20\\% accuracy. 2) The effective use of multi-view structural information remains a significant challenge, as the inclusion of structural images often fails to provide a consistent benefit and can even degrade performance. This highlights the limitations of current models in effectively fusing information across different modalities. 3) Models' performance scales more directly with the computational cost during inference than with its parameter count, underscoring the critical role of Chain-of-Thought reasoning capabilities for protein-specific tasks. LiveProteinBench delineates the current performance frontiers for LLMs in bioinformatics and presents new challenges for the development of future multimodal foundation models for biology",
+    "doi": "",
+    "arxiv_id": "2512.22257",
+    "extraction": "arxiv",
+    "id": "469cb127dc5f5e14",
+    "file": "2512.22257v1.pdf",
+    "file_sha256": "469cb127dc5f5e144848da97049a1442b92b5d569f98f97eeee0574d37cce425",
+    "file_size": 1975260,
+    "file_mtime": 1786370627,
+    "added_at": "2026-08-10T15:00:05Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2512.22257",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2512.22257"
+  },
+  {
     "title": "Equivariant Quantum Graph Circuits",
     "authors": [
       "Péter Mernyei",
