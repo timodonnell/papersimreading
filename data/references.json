@@ -1,5 +1,34 @@
 [
   {
+    "title": "Training Compute-Optimal Protein Language Models",
+    "authors": [
+      "Xingyi Cheng",
+      "Bo Chen",
+      "Pan Li",
+      "Jing Gong",
+      "Jie Tang",
+      "Le Song"
+    ],
+    "journal": "arXiv",
+    "published": "2024-11-04",
+    "abstract": "We explore optimally training protein language models, an area of significant interest in biological research where guidance on best practices is limited. Most models are trained with extensive compute resources until performance gains plateau, focusing primarily on increasing model sizes rather than optimizing the efficient compute frontier that balances performance and compute budgets. Our investigation is grounded in a massive dataset consisting of 939 million protein sequences. We trained over 300 models ranging from 3.5 million to 10.7 billion parameters on 5 to 200 billion unique tokens, to investigate the relations between model sizes, training token numbers, and objectives. First, we observed the effect of diminishing returns for the Causal Language Model (CLM) and that of overfitting for the Masked Language Model~(MLM) when repeating the commonly used Uniref database. To address this, we included metagenomic protein sequences in the training set to increase the diversity and avoid the plateau or overfitting effects. Second, we obtained the scaling laws of CLM and MLM on Transformer, tailored to the specific characteristics of protein sequence data. Third, we observe a transfer scaling phenomenon from CLM to MLM, further demonstrating the effectiveness of transfer through scaling behaviors based on estimated Effectively Transferred Tokens. Finally, to validate our scaling laws, we compare the large-scale versions of ESM-2 and PROGEN2 on downstream tasks, encompassing evaluations of protein generation as well as structure- and function-related tasks, all within less or equivalent pre-training compute budgets.",
+    "doi": "",
+    "arxiv_id": "2411.02142",
+    "extraction": "arxiv",
+    "id": "d5e07e42571d9bd5",
+    "file": "2411.02142v1.pdf",
+    "file_sha256": "d5e07e42571d9bd5a0366945f550dcd8e4776a6bbc4c7ad42360365d6ab56aa7",
+    "file_size": 8080081,
+    "file_mtime": 1786999156,
+    "added_at": "2026-08-17T21:00:05Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2411.02142",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2411.02142"
+  },
+  {
     "title": "Small-Scale Experiments: Are We There Yet?",
     "authors": [
       "Nicholas Lourie",
