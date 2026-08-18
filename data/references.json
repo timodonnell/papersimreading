@@ -1,5 +1,38 @@
 [
   {
+    "title": "AI-redesigned starting points and outcomes enhance protein evolution",
+    "authors": [
+      "Nicholas A. Krasnow",
+      "Joy A. Xu",
+      "Emily Zhang",
+      "Gandhar K. Mahadeshwar",
+      "Y. Allen Tao",
+      "Julia McCreary",
+      "Colin F. Hemez",
+      "Logan E. Brown",
+      "Wei Jiang",
+      "David R. Liu"
+    ],
+    "journal": "Nature",
+    "published": "2026-07-22",
+    "abstract": "Engineered or laboratory-evolved proteins often have suboptimal stability, activity or specificity. Here we applied artificial intelligence (AI)-based protein sequence design to address challenges in experimental enzyme evolution. Using the model ProteinMPNN, we redesigned three distinct botulinum neurotoxin (BoNT) proteases, generating variants with improved stability and full catalytic efficiency 1 . We hypothesized that redesigned enzymes may be more mutationally robust than their wild-type (WT) counterparts, and therefore may serve as better starting points to evolve new function. We performed side-by-side phage-assisted continuous evolution campaigns initiated with AI-redesigned proteases or with the corresponding WT proteases 2 . Evolving three distinct redesigned enzymes as starting points consistently yielded proteases with higher activity than evolving WT proteases in the same selection. Across four evolution campaigns, redesign conferred robustness that unlocked access to otherwise inaccessible highly functional sequences, confirmed by the inability of redesign-evolved mutations to function in WT enzyme backgrounds. When redesign raises fitness in sequence space local to the starting point, redesigned starting points adapt at a faster rate. Finally, we evolved both WT and AI-redesigned BoNT/E protease to selectively cleave the therapeutically relevant protein ataxin-2. Proteases evolved from the redesigned starting point reached higher catalytic efficiency and stability while minimizing native substrate cleavage, achieving more than 79-fold greater selected specificity for ataxin-2 than the best-performing variant evolved from WT BoNT/E. This study establishes a practical workflow using AI-redesigned starting points to evolve enzymes with improved properties compared with those evolved from natural proteins, with broad implications for protein science.",
+    "doi": "10.1038/s41586-026-10820-0",
+    "arxiv_id": "",
+    "extraction": "crossref",
+    "id": "cb4ec0d0ec4c4262",
+    "file": "s41586-026-10820-0.pdf",
+    "file_sha256": "cb4ec0d0ec4c42623484ae76c2bd0582da9f7fd84e31b3b3bffe7ce1370870a5",
+    "file_size": 13940878,
+    "file_mtime": 1787079381,
+    "added_at": "2026-08-18T19:00:02Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.1038/s41586-026-10820-0",
+    "pdf_url": "https://doi.org/10.1038/s41586-026-10820-0",
+    "pdf_url_kind": "oa",
+    "html_v": 2,
+    "html_url": ""
+  },
+  {
     "title": "Training Compute-Optimal Protein Language Models",
     "authors": [
       "Xingyi Cheng",
