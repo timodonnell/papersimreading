@@ -1,5 +1,33 @@
 [
   {
+    "title": "MSA Generation with Seqs2Seqs Pretraining: Advancing Protein Structure Predictions",
+    "authors": [
+      "Le Zhang",
+      "Jiayang Chen",
+      "Tao Shen",
+      "Yu Li",
+      "Siqi Sun"
+    ],
+    "journal": "Advances in Neural Information Processing Systems 37",
+    "published": "2024",
+    "abstract": "Deep learning models like AlphaFold2 (Jumper et al., 2021) have revolutionized protein structure prediction, achieving unprecedented accuracy. However, the dependence on robust multiple sequence alignments (MSAs) continues to pose a challenge, especially for proteins that lack a wealth of homologous sequences. To overcome this limitation, we introduce MSA-Generator, a self-supervised generative protein language model. Trained on a sequence-to-sequence task using an automatically constructed dataset, MSA-Generator employs protein-specific attention mechanisms to harness large-scale protein databases, generating virtual MSAs that enrich existing ones and boost prediction accuracy. Our experiments on CASP14 and CASP15 benchmarks reveal significant improvements in LDDT scores, particularly for complex and challenging sequences, enhancing the performance of both AlphaFold2 and RoseTTAFold. The code is released at https://github.com/lezhang7/MSAGen.",
+    "doi": "10.52202/079017-1827",
+    "arxiv_id": "",
+    "extraction": "crossref-title",
+    "id": "afd65a60c7caa2e0",
+    "file": "NeurIPS-2024-msa-generation-with-seqs2seqs-pretraining-advancing-protein-structure-predictions-Paper-Conference.pdf",
+    "file_sha256": "afd65a60c7caa2e09c8c03bc17d87cb2857d83b0b42d38a31e1d67e6b2a56d75",
+    "file_size": 5608828,
+    "file_mtime": 1787256549,
+    "added_at": "2026-08-20T21:00:16Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.52202/079017-1827",
+    "pdf_url": "https://www.dropbox.com/scl/fi/n1g8r0j9os4vfs7ir45od/NeurIPS-2024-msa-generation-with-seqs2seqs-pretraining-advancing-protein-structure-predictions-Paper-Conference.pdf?rlkey=ilc2sjmub8u945duwaqrvf0lt&dl=0",
+    "pdf_url_kind": "dropbox",
+    "html_v": 2,
+    "html_url": ""
+  },
+  {
     "title": "AI-redesigned starting points and outcomes enhance protein evolution",
     "authors": [
       "Nicholas A. Krasnow",
