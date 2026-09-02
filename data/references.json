@@ -1,5 +1,31 @@
 [
   {
+    "title": "Large language models as uncertainty-calibrated optimizers for experimental discovery",
+    "authors": [
+      "Bojana Ranković",
+      "Ryan-Rhys Griffiths",
+      "Philippe Schwaller"
+    ],
+    "journal": "Nature Machine Intelligence",
+    "published": "2026-08-28",
+    "abstract": "From reaction optimization to molecular design, experimental discovery poses the same expensive question: which candidate to test next under time and resource constraints. Bayesian optimization provides principled answers but depends on domain expertise that rarely transfers. Large language models (LLMs) contain rich scientific knowledge but lack the calibrated uncertainty estimates crucial for high-stakes decisions. Here we show how training language models through Bayesian objectives enables their use as reliable optimizers guided by natural language. Our approach, GOLLuM (Gaussian process Optimized LLMs), teaches LLMs from experimental outcomes under uncertainty, transforming their overconfidence from a fundamental flaw into a precise learning signal. This signal reshapes the LLM embeddings so that experiments with similar outcomes cluster together, revealing structure in the design space. Starting from only ten low-performing experiments, GOLLuM generalizes across 23 tasks in organic synthesis, materials science, process chemistry and molecular design, ranking first on average among all competing methods. It matches traditional Bayesian optimization with over 40% fewer experiments and nearly doubles the discovery of high-performing Buchwald–Hartwig reactions over expert quantum-chemical descriptors and state-of-the-art LLMs (43% versus 24–25%). More broadly, GOLLuM points to a different paradigm for specializing foundation models: not through more data but through richer, uncertainty-guided information.",
+    "doi": "10.1038/s42256-026-01283-z",
+    "arxiv_id": "",
+    "extraction": "crossref",
+    "id": "50dba60732971e03",
+    "file": "s42256-026-01283-z.pdf",
+    "file_sha256": "50dba60732971e03a4b486ea1466a90b02b2c4be4b81d337e526fad5936f1e3b",
+    "file_size": 3799464,
+    "file_mtime": 1788378088,
+    "added_at": "2026-09-02T20:00:02Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.1038/s42256-026-01283-z",
+    "pdf_url": "https://www.nature.com/articles/s42256-026-01283-z.pdf",
+    "pdf_url_kind": "oa",
+    "html_v": 2,
+    "html_url": ""
+  },
+  {
     "title": "AgentFold: Closed-Loop Agentic Search for Protein Folding Model Design",
     "authors": [
       "Mingquan Liu",
