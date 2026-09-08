@@ -1,5 +1,29 @@
 [
   {
+    "title": "American College of Medical Genetics and Genomics: revised scope of practice and strategic plan",
+    "authors": [
+      "Gerald Feldman"
+    ],
+    "journal": "Genetics in Medicine",
+    "published": "2015-09",
+    "abstract": "",
+    "doi": "10.1038/gim.2015.97",
+    "arxiv_id": "",
+    "extraction": "crossref-title",
+    "id": "1368768bd80d60a2",
+    "file": "PIIS1098360021009746.pdf",
+    "file_sha256": "1368768bd80d60a20c4c7a71acaa3b0c75ea0316853865696b14cb846b4f04bb",
+    "file_size": 895252,
+    "file_mtime": 1788897460,
+    "added_at": "2026-09-08T20:00:06Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.1038/gim.2015.97",
+    "pdf_url": "https://www.dropbox.com/scl/fi/gwfxurtxpxdlu152o4xyd/PIIS1098360021009746.pdf?rlkey=573fmqprfkthbhdzb2xogbk3h&dl=0",
+    "pdf_url_kind": "dropbox",
+    "html_v": 2,
+    "html_url": ""
+  },
+  {
     "title": "De novo design of ligand binding proteins using large language models alone",
     "authors": [
       "Nam Hyeong Kim",
