@@ -1,5 +1,33 @@
 [
   {
+    "title": "De novo design of ligand binding proteins using large language models alone",
+    "authors": [
+      "Nam Hyeong Kim",
+      "A. Katherine Hatstat",
+      "Hyunil Jo",
+      "Yibing Wu",
+      "William F. DeGrado"
+    ],
+    "journal": "openRxiv",
+    "published": "2026-09-03",
+    "abstract": "Protein design has rapidly advanced with the advent of sequence- and structure-based machine learning models. However, reasoned design, which applies physicochemical principles and rules derived from sequence-structure-function relationships, has not seen the same benefits from generative machine learning models. Here, we test the ability of common large language models (LLMs; e.g. Claude, ChatGPT, and Gemini) to consider design principles to generate de novo proteins that bind metals and lipophilic small molecules without copying existing sequences. Common LLMs alone are able to 1) generate protein sequences to adopt a desired fold and bind the target ligand and 2) explain the principles that motivate the design choices. Following structure prediction and filtering, we selected a small set of designs (6 to 12 designs per query) for experimental validation, affording metal binders in one round of LLM-based design (25% hit rate) and perfluorooctanoic acid binders in two rounds (25% hit rate in the second round of design). Importantly, the LLMs produce detailed justification to accompany the de novo designed sequences, providing a conceptual framework on which designs can be evaluated. While the successful designs have some deviations from the prompted parameters and LLM-articulated design rationale, these campaigns provide a case study that highlights the utility of LLMs in making protein design more comprehensible and accessible to users without sophisticated design expertise.",
+    "doi": "10.64898/2026.09.02.748987",
+    "arxiv_id": "",
+    "extraction": "crossref",
+    "id": "859c70e711332ea1",
+    "file": "2026.09.02.748987v1.full.pdf",
+    "file_sha256": "859c70e711332ea1fa77fc1c7a7f5a3eec9739148c860a8329882233e4c55d74",
+    "file_size": 3295725,
+    "file_mtime": 1788874196,
+    "added_at": "2026-09-08T14:00:01Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.64898/2026.09.02.748987",
+    "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2026/09/03/2026.09.02.748987.full.pdf",
+    "pdf_url_kind": "oa",
+    "html_v": 2,
+    "html_url": ""
+  },
+  {
     "title": "BioMatrix: Towards a Comprehensive Biological Foundation Model Spanning the Modality Matrix of Sequences, Structures, and Language",
     "authors": [
       "Qizhi Pei",
