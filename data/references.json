@@ -1,5 +1,38 @@
 [
   {
+    "title": "BOTANIC-1: a series of long-context plant genomic foundation models in the agentic era",
+    "authors": [
+      "Amélie Barozet",
+      "Vincent Cabeli",
+      "Jean Ogier du Terrail",
+      "Alexey Rukhovich",
+      "Thomas Janssoone",
+      "Gary Klajer",
+      "Zeinab Sheikhitarghi",
+      "Gregory Andrews",
+      "Cyril Veran",
+      "Léonard Strouk"
+    ],
+    "journal": "openRxiv",
+    "published": "2026-09-07",
+    "abstract": "The development of climate-resilient crops would be greatly accelerated by models able to reason directly over plant genomic sequences and to pinpoint trait-associated regions or loci. Anticipating the impact of DNA base changes (variants) remains challenging, and understanding regulatory mechanisms is still an active area of research. Through self-supervised training on unannotated genomic data, genomic language models (gLMs) can learn DNA syntax and grammar that go beyond current annotations, thus complementing standard bioinformatics analyses that rely on rules established by decades of genomics research. Here we present our agent-powered Model Factory and its first outputs: the Botanic1 family of gLMs designed for plant research, which operates reliably on sequences from hundreds of base pairs up to 128 kbp. These models outperform all generalist and plant-specific gLMs (as well as specialised baselines) on one of the largest sets of plant genomics evaluation tasks reported to date, at a much smaller budget than concurrent models. Mechanistic interpretability analysis identifies features associated with biologically meaningful sequence properties including coding region boundaries and splice site motifs, demonstrating that these models are a source of biological insight beyond their benchmark performance. Finally, because a gLM only becomes practically useful when embedded in a broader workflow, we integrate Botanic1 as a specialised genomic layer callable by a generalist large language model (LLM) agent, illustrating how such hybrid systems could accelerate plant biology research. To support the plant genomics research community, we release the four Botanic1 models, their pre-training corpus and the trained sparse autoencoder for research use at https://huggingface.co/spaces/living-models/botanic1-report.",
+    "doi": "10.64898/2026.09.04.749355",
+    "arxiv_id": "",
+    "extraction": "crossref",
+    "id": "2bc946772fc520c6",
+    "file": "2026.09.04.749355v2.full.pdf",
+    "file_sha256": "2bc946772fc520c6db7b01b0667e46386e9986f5bdd68d54844811ae556b668f",
+    "file_size": 7900382,
+    "file_mtime": 1789065346,
+    "added_at": "2026-09-10T19:00:02Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.64898/2026.09.04.749355",
+    "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2026/09/07/2026.09.04.749355.full.pdf",
+    "pdf_url_kind": "oa",
+    "html_v": 2,
+    "html_url": ""
+  },
+  {
     "title": "Beyond Human Data: Scaling Self-Training for Problem-Solving with Language Models",
     "authors": [
       "Avi Singh",
