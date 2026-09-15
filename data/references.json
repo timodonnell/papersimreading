@@ -1,5 +1,31 @@
 [
   {
+    "title": "Interaction Profiles as a Universal Language for Generative Molecular Design with ShEPhERD-2",
+    "authors": [
+      "Kento A Abeywardane",
+      "Kenji Walker",
+      "Connor W Coley"
+    ],
+    "journal": "openRxiv",
+    "published": "2026-09-12",
+    "abstract": "Three-dimensional intermolecular interactions govern molecular recognition and are fundamental to the pharmacological activity of small-molecule drugs. We propose that an interaction profile, comprising shape, electrostatics, and directional pharmacophores, is a sufficient and transferable design specification for molecular design. We introduce ShEPhERD-2, a 3D generative model that generates molecular structures conditioned on explicit interaction profiles. ShEPhERD–2 generates low-strain, drug-like molecules more efficiently and with greater fidelity to target interaction profiles than its predecessor while enabling precise control over molecular design through pharmacophore prioritization, substructure constraints, and composition of multiple interaction profiles. We demonstrate the application of a single model to bioisosteric fragment merging, dual-target design, selectivity engineering, and modality hopping without task-specific retraining. These results establish interaction profiles as a chemotype-agnostic interface between structure hypotheses and molecular design.",
+    "doi": "10.64898/2026.09.10.750648",
+    "arxiv_id": "",
+    "extraction": "crossref",
+    "id": "b13c31af84d99bf0",
+    "file": "2026.09.10.750648v1.full.pdf",
+    "file_sha256": "b13c31af84d99bf0615afdd9bd2d791034d5206cf74032a14aa56171750296f0",
+    "file_size": 9942790,
+    "file_mtime": 1789497597,
+    "added_at": "2026-09-15T19:00:02Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.64898/2026.09.10.750648",
+    "pdf_url": "https://doi.org/10.64898/2026.09.10.750648",
+    "pdf_url_kind": "oa",
+    "html_v": 2,
+    "html_url": ""
+  },
+  {
     "title": "BOTANIC-1: a series of long-context plant genomic foundation models in the agentic era",
     "authors": [
       "Amélie Barozet",
