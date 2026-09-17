@@ -1,5 +1,31 @@
 [
   {
+    "title": "Synthesizing State-of-the-Art Structure Predictions from Soup of Co-folding Models",
+    "authors": [
+      "Hyosoon Jang",
+      "Taewon Kim",
+      "Sungsoo Ahn"
+    ],
+    "journal": "arXiv",
+    "published": "2026-09-14",
+    "abstract": "Co-folding models have advanced rapidly, yet no single model consistently performs best across all biomolecular complexes. This raises the question of whether independently trained co-folding models encode complementary information that can be transferred across co-folding models. We introduce SoupFold, which improves co-folding predictions by learning simple mappings between the representation spaces of co-folding models. At inference time, SoupFold transfers and incorporates representations from other co-folding models to update the representation used for structure prediction. Importantly, this does not re-train the co-folding models. We evaluate SoupFold on protein-protein and protein-ligand prediction tasks of FoldBench using AlphaFold3, Protenix, ESMFold2, and OpenDDE. By combining their representations, SoupFold achieves state-of-the-art performance on both protein-protein and protein-ligand structure prediction, showing that independently trained co-folding models encode complementary information that can be effectively transferred across models.",
+    "doi": "",
+    "arxiv_id": "2609.15552",
+    "extraction": "arxiv",
+    "id": "9c0dadde57ff811d",
+    "file": "2609.15552v1.pdf",
+    "file_sha256": "9c0dadde57ff811d5bb4a0c511a38a4be439337b8c710711823ab3c5b077b9af",
+    "file_size": 2382636,
+    "file_mtime": 1789673948,
+    "added_at": "2026-09-17T20:00:05Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2609.15552",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2609.15552"
+  },
+  {
     "title": "Interaction Profiles as a Universal Language for Generative Molecular Design with ShEPhERD-2",
     "authors": [
       "Kento A Abeywardane",
