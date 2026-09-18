@@ -1,5 +1,31 @@
 [
   {
+    "title": "Accurate and efficient prediction of protein conformations with ProtMonomer",
+    "authors": [
+      "Yunda Si",
+      "Suqi Zhang",
+      "Luonan Chen"
+    ],
+    "journal": "openRxiv",
+    "published": "2026-08-31",
+    "abstract": "Deep learning-based protein structure prediction methods that leverage evolutionary information from multiple sequence alignments (MSAs), exemplified by AlphaFold2, have achieved remarkable accuracy. However, existing methods still struggle to predict challenging proteins, particularly those with novel folds or limited evolutionary information, and to recover alternative conformational states. Here we show that structure prediction models trained under different MSA-depth distributions corresponding to different levels of evolutionary information exhibit complementary generalization behaviors, and that a model trained on a mixture of these distributions can combine their complementary generalization strengths. Building on this insight, we developed ProtMonomer, a deep learning framework trained on MSA-depth distributions representing a broad range of evolutionary information levels to improve structure prediction. Across benchmarks comprising CASP15 targets, non-redundant experimentally determined structures, orphan proteins, and short peptides, ProtMonomer performed comparably to or better than leading methods, including AlphaFold2 and AlphaFold3, with particularly strong performance on challenging targets. For fold-switching proteins, ProtMonomer also recovered alternative conformational states more accurately than AlphaFold2 and AlphaFold3 across diverse homologous sequence sampling strategies. In addition to improving predictive accuracy, ProtMonomer substantially reduced inference cost through an efficient architecture, enabling high-throughput applications. Together, these findings provide insights into the generalization of evolution-informed structure prediction models and support ProtMonomer as an accurate and efficient framework for protein structure prediction.",
+    "doi": "10.64898/2026.08.28.747824",
+    "arxiv_id": "",
+    "extraction": "crossref",
+    "id": "29611d59805c9800",
+    "file": "2026.08.28.747824v1.full.pdf",
+    "file_sha256": "29611d59805c9800ac92026adac65f4267f22e4becf264d40d21fc5c9ed5c97f",
+    "file_size": 1301174,
+    "file_mtime": 1789758858,
+    "added_at": "2026-09-18T20:00:02Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.64898/2026.08.28.747824",
+    "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2026/08/31/2026.08.28.747824.full.pdf",
+    "pdf_url_kind": "oa",
+    "html_v": 2,
+    "html_url": ""
+  },
+  {
     "title": "How Good Are Frontier Models at Physics? Expert Re-Grading Reveals Broken Evaluations and Near-Saturation of Leading Benchmarks",
     "authors": [
       "Ali Ansari",
