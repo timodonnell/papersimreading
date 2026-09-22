@@ -1,5 +1,35 @@
 [
   {
+    "title": "AlphaFold predictions of fold-switched conformations are driven by structure memorization",
+    "authors": [
+      "Devlina Chakravarty",
+      "Joseph W. Schafer",
+      "Ethan A. Chen",
+      "Joseph F. Thole",
+      "Leslie A. Ronish",
+      "Myeongsang Lee",
+      "Lauren L. Porter"
+    ],
+    "journal": "Nature Communications",
+    "published": "2024-08-24",
+    "abstract": "Recent work suggests that AlphaFold (AF)–a deep learning-based model that can accurately infer protein structure from sequence–may discern important features of folded protein energy landscapes, defined by the diversity and frequency of different conformations in the folded state. Here, we test the limits of its predictive power on fold-switching proteins, which assume two structures with regions of distinct secondary and/or tertiary structure. We find that (1) AF is a weak predictor of fold switching and (2) some of its successes result from memorization of training-set structures rather than learned protein energetics. Combining >280,000 models from several implementations of AF2 and AF3, a 35% success rate was achieved for fold switchers likely in AF’s training sets. AF2’s confidence metrics selected against models consistent with experimentally determined fold-switching structures and failed to discriminate between low and high energy conformations. Further, AF captured only one out of seven experimentally confirmed fold switchers outside of its training sets despite extensive sampling of an additional ~280,000 models. Several observations indicate that AF2 has memorized structural information during training, and AF3 misassigns coevolutionary restraints. These limitations constrain the scope of successful predictions, highlighting the need for physically based methods that readily predict multiple protein conformations.",
+    "doi": "10.1038/s41467-024-51801-z",
+    "arxiv_id": "",
+    "extraction": "crossref",
+    "id": "605301f21e24b579",
+    "file": "s41467-024-51801-z.pdf",
+    "file_sha256": "605301f21e24b579100d84d82c48616b537aaa52c5b4e1156c8283f1178cc338",
+    "file_size": 2347204,
+    "file_mtime": 1790104847,
+    "added_at": "2026-09-22T20:00:03Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.1038/s41467-024-51801-z",
+    "pdf_url": "https://www.nature.com/articles/s41467-024-51801-z.pdf",
+    "pdf_url_kind": "oa",
+    "html_v": 2,
+    "html_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11344769/"
+  },
+  {
     "title": "Fold-Switching Proteins",
     "authors": [
       "Devlina Chakravarty",
