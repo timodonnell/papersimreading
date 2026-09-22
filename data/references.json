@@ -1,5 +1,30 @@
 [
   {
+    "title": "Fold-Switching Proteins",
+    "authors": [
+      "Devlina Chakravarty",
+      "Lauren L. Porter"
+    ],
+    "journal": "Annual Review of Biophysics",
+    "published": "2026-05-06",
+    "abstract": "Globular proteins are expected to assume folds with fixed secondary structures, α-helices and β-sheets. Fold-switching proteins challenge this expectation by remodeling their secondary and/or tertiary structures in response to cellular stimuli. Though these shape-shifting proteins were once thought to be haphazard evolutionary by-products with little intrinsic biological relevance, recent work has shown that evolution has selected for their dual-folding behavior, which plays critical roles in biological processes across all kingdoms of life. The widening scope of fold switching draws attention to the ways it challenges conventional wisdom, raising fundamental unanswered questions about protein structure, biophysics, and evolution. Here we discuss the progress being made to answer these questions and suggest future directions for the field.",
+    "doi": "10.1146/annurev-biophys-022924-012038",
+    "arxiv_id": "",
+    "extraction": "crossref",
+    "id": "3eb31a444a8af497",
+    "file": "annurev-biophys-022924-012038.pdf",
+    "file_sha256": "3eb31a444a8af497842610a1d2166df3d925ac5f418f727d781f3f774df8f4e9",
+    "file_size": 4610493,
+    "file_mtime": 1790103288,
+    "added_at": "2026-09-22T19:00:03Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.1146/annurev-biophys-022924-012038",
+    "pdf_url": "https://doi.org/10.1146/annurev-biophys-022924-012038",
+    "pdf_url_kind": "oa",
+    "html_v": 2,
+    "html_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12629603/"
+  },
+  {
     "title": "Protein 3D Structure Computed from Evolutionary Sequence Variation",
     "authors": [
       "Debora S. Marks",
