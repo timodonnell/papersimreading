@@ -1,5 +1,31 @@
 [
   {
+    "title": "Towards Accurate Prediction of Mutation-Induced Changes in Protein Structure",
+    "authors": [
+      "Zhuoyi Liu",
+      "Alex Calabrese",
+      "Corey S. O'Hern"
+    ],
+    "journal": "arXiv",
+    "published": "2026-09-21",
+    "abstract": "Proteins can possess numerous mutations relative to their wild-type amino acid sequences with minimal impact to their structure and function. However, in other cases, even a single amino acid mutation relative to the wild-type sequence can lead to a large change in structure or even a disease phenotype. While the accuracy of wild-type protein structure prediction has improved significantly in recent years, it remains difficult to accurately predict the structure of mutant proteins. Here, we characterize the local mutation-induced structural changes in proteins for a dataset of wildtype and the corresponding single-amino acid mutant x-ray crystal structures from the Protein Data Bank (PDB). We find that mutation-induced structural changes in these proteins are localized at the site of the mutation, decaying rapidly with increasing spatial distance from the mutation site. In addition, we evaluate how well AlphaFold3 can recapitulate the observed mutation-induced structural deformations in the x-ray crystal structures. We find that the accuracy of the AlphaFold3 predictions decreases strongly with increasing mutation-induced deformation. In contrast to the results for AlphaFold3, the Pearson correlation between a single physical feature, i.e. the change in solvent accessibility, and the mutation-induced deformation does not depend on the magnitude of the deformation. Our results and analyses provide a framework for further studies aimed at predicting the structural changes in proteins caused by single amino acid mutations.",
+    "doi": "",
+    "arxiv_id": "2609.24842",
+    "extraction": "arxiv",
+    "id": "79114c826dce8e6a",
+    "file": "2609.24842v1.pdf",
+    "file_sha256": "79114c826dce8e6aaa578fe6bd1217f965db192c58f287718ed2fed1fc0fae8f",
+    "file_size": 2579665,
+    "file_mtime": 1790276802,
+    "added_at": "2026-09-24T20:00:05Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2609.24842",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2609.24842"
+  },
+  {
     "title": "AlphaFold predictions of fold-switched conformations are driven by structure memorization",
     "authors": [
       "Devlina Chakravarty",
