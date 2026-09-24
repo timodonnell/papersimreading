@@ -1,5 +1,27 @@
 [
   {
+    "title": "Abstract",
+    "authors": [],
+    "journal": "eLife Sciences Publications, Ltd",
+    "published": "None",
+    "abstract": "The prediction of the structures of proteins without detectable sequence similarity to any protein of known structure remains an outstanding scientific challenge. Here we report significant progress in this area. We first describe de novo blind structure predictions of unprecendented accuracy we made for two proteins in large families in the recent CASP11 blind test of protein structure prediction methods by incorporating residue–residue co-evolution information in the Rosetta structure prediction program. We then describe the use of this method to generate structure models for 58 of the 121 large protein families in prokaryotes for which three-dimensional structures are not available. These models, which are posted online for public access, provide structural information for the over 400,000 proteins belonging to the 58 families and suggest hypotheses about mechanism for the subset for which the function is known, and hypotheses about function for the remainder. DOI: 10.7554/eLife.09248.001 *For correspondence: dabaker@ uw.edu Competing interests: The authors declare that no competing interests exist. Funding: See page 22 Received: 06 June 2015 Accepted: 30 August 2015 Published: 03 September 2015 Reviewing editor: Yibing Shan, DE Shaw Research, United States Copyright Ovchinnikov et al. This article is distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use and redistribution provided that the original author and source are credited.",
+    "doi": "10.7554/elife.09248.001",
+    "arxiv_id": "",
+    "extraction": "crossref",
+    "id": "7be2289d36c5fda2",
+    "file": "elife-09248-v2.pdf",
+    "file_sha256": "7be2289d36c5fda2edaed3b33049d7cd72d540d2ba69d3af19ea752dde23a339",
+    "file_size": 6920132,
+    "file_mtime": 1790284798,
+    "added_at": "2026-09-24T22:00:03Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.7554/elife.09248.001",
+    "pdf_url": "https://www.dropbox.com/scl/fi/iby8cxjatg8gwiz9cqeef/elife-09248-v2.pdf?rlkey=3tlq85vkr4oppmllub81kr583&dl=0",
+    "pdf_url_kind": "dropbox",
+    "html_v": 2,
+    "html_url": ""
+  },
+  {
     "title": "Protein structure determination using metagenome sequence data",
     "authors": [
       "Sergey Ovchinnikov",
