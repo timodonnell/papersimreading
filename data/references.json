@@ -1,5 +1,32 @@
 [
   {
+    "title": "Agentic campaign control for high-throughput de novo binder design",
+    "authors": [
+      "Minkyu Jeon",
+      "Jinyeop Song",
+      "Jina Kim",
+      "Ellen D Zhong"
+    ],
+    "journal": "openRxiv",
+    "published": "2026-09-23",
+    "abstract": "Progress in artificial intelligence has produced a rapidly growing ecosystem of methods for de novo protein design. With access to many specialized and often complementary tools, how does one use them effectively, especially with a finite compute budget? Here, we introduce Target-adaptive Rescue-Explore-eXploit (T-REX), an agentic protein binder design framework that orchestrates multiple state-of-the-art protein generative models and structure evaluators. Over the course of a design campaign, T-REX leverages large language model (LLM) agents to reason over accumulating outcomes and decide whether to rescue promising candidates, explore alternative settings, or exploit productive routes, while a deterministic controller validates and schedules proposed actions.",
+    "doi": "10.64898/2026.09.22.753604",
+    "arxiv_id": "",
+    "extraction": "crossref",
+    "id": "e1e9691a559a6cbb",
+    "file": "2026.09.22.753604v2.full.pdf",
+    "file_sha256": "e1e9691a559a6cbbd5a5b31048e410c4c632d6ceddbc1945ae17a08c926d115e",
+    "file_size": 35803025,
+    "file_mtime": 1790357507,
+    "added_at": "2026-09-25T18:00:02Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.64898/2026.09.22.753604",
+    "pdf_url": "https://doi.org/10.64898/2026.09.22.753604",
+    "pdf_url_kind": "oa",
+    "html_v": 2,
+    "html_url": ""
+  },
+  {
     "title": "Abstract",
     "authors": [],
     "journal": "eLife Sciences Publications, Ltd",
