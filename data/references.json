@@ -1,5 +1,32 @@
 [
   {
+    "title": "Correlated mutations and residue contacts in proteins",
+    "authors": [
+      "Ulrike Göbel",
+      "Chris Sander",
+      "Reinhard Schneider",
+      "Alfonso Valencia"
+    ],
+    "journal": "Proteins: Structure, Function, and Bioinformatics",
+    "published": "1994-04",
+    "abstract": "The maintenance of protein function and structure constrains the evolution of amino acid sequences. This fact can be exploited to interpret correlated mutations observed in a sequence family as an indication of probable physical contact in three dimensions. Here we present a simple and general method to analyze correlations in mutational behavior between different positions in a multiple sequence alignment. We then use these correlations to predict contact maps for each of 11 protein families and compare the result with the contacts determined by crystallography. For the most strongly correlated residue pairs predicted to be in contact, the prediction accuracy ranges from 37 to 68% and the improvement ratio relative to a random prediction from 1.4 to 5.1. Predicted contact maps can be used as input for the calculation of protein tertiary structure, either from sequence information alone or in combination with experimental information. © 1994 John Wiley & Sons, Inc.",
+    "doi": "10.1002/prot.340180402",
+    "arxiv_id": "",
+    "extraction": "crossref",
+    "id": "99f2ed10545773ab",
+    "file": "Proteins - April 1994 - Göbel - Correlated mutations and residue contacts in proteins.pdf",
+    "file_sha256": "99f2ed10545773abbc6b2f253aa2f447ee24f305198cdd3ba0370795955f5fde",
+    "file_size": 862871,
+    "file_mtime": 1790445151,
+    "added_at": "2026-09-26T18:00:04Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.1002/prot.340180402",
+    "pdf_url": "http://orbilu.uni.lu/handle/10993/15379",
+    "pdf_url_kind": "oa",
+    "html_v": 2,
+    "html_url": ""
+  },
+  {
     "title": "Agentic campaign control for high-throughput de novo binder design",
     "authors": [
       "Minkyu Jeon",
