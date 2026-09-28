@@ -1,5 +1,31 @@
 [
   {
+    "title": "Assessing the utility of coevolution-based residue–residue contact predictions in a sequence- and structure-rich era",
+    "authors": [
+      "Hetunandan Kamisetty",
+      "Sergey Ovchinnikov",
+      "David Baker"
+    ],
+    "journal": "Proceedings of the National Academy of Sciences",
+    "published": "2013-09-05",
+    "abstract": "Significance We develop an improved method for predicting residue–residue contacts in protein structures that achieves higher accuracy than previous methods by integrating structural context and sequence coevolution information. We then determine the conditions under which these predicted contacts are likely to be useful for structure modeling and identify more than 400 protein families where these conditions are currently met.",
+    "doi": "10.1073/pnas.1314045110",
+    "arxiv_id": "",
+    "extraction": "crossref",
+    "id": "7924ab8c65155dbd",
+    "file": "kamisetty-et-al-2013-assessing-the-utility-of-coevolution-based-residue-residue-contact-predictions-in-a-sequence-and.pdf",
+    "file_sha256": "7924ab8c65155dbdef5f559d6cf0757572171e15f87bf1de5712f0909279bce4",
+    "file_size": 903743,
+    "file_mtime": 1790601482,
+    "added_at": "2026-09-28T14:00:02Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.1073/pnas.1314045110",
+    "pdf_url": "https://www.pnas.org/content/pnas/110/39/15674.full.pdf",
+    "pdf_url_kind": "oa",
+    "html_v": 2,
+    "html_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3785744/"
+  },
+  {
     "title": "Correlated mutations and residue contacts in proteins",
     "authors": [
       "Ulrike Göbel",
