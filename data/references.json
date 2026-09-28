@@ -1,5 +1,43 @@
 [
   {
+    "title": "Evolutionary-scale prediction of atomic-level protein structure with a language model",
+    "authors": [
+      "Zeming Lin",
+      "Halil Akin",
+      "Roshan Rao",
+      "Brian Hie",
+      "Zhongkai Zhu",
+      "Wenting Lu",
+      "Nikita Smetanin",
+      "Robert Verkuil",
+      "Ori Kabeli",
+      "Yaniv Shmueli",
+      "Allan dos Santos Costa",
+      "Maryam Fazel-Zarandi",
+      "Tom Sercu",
+      "Salvatore Candido",
+      "Alexander Rives"
+    ],
+    "journal": "Science",
+    "published": "2023-03-17",
+    "abstract": "Recent advances in machine learning have leveraged evolutionary information in multiple sequence alignments to predict protein structure. We demonstrate direct inference of full atomic-level protein structure from primary sequence using a large language model. As language models of protein sequences are scaled up to 15 billion parameters, an atomic-resolution picture of protein structure emerges in the learned representations. This results in an order-of-magnitude acceleration of high-resolution structure prediction, which enables large-scale structural characterization of metagenomic proteins. We apply this capability to construct the ESM Metagenomic Atlas by predicting structures for >617 million metagenomic protein sequences, including >225 million that are predicted with high confidence, which gives a view into the vast breadth and diversity of natural proteins.",
+    "doi": "10.1126/science.ade2574",
+    "arxiv_id": "",
+    "extraction": "crossref",
+    "id": "1cb728bef07ce1a5",
+    "file": "science.ade2574.pdf",
+    "file_sha256": "1cb728bef07ce1a50d6f87bcf8cbf3f357601cd8de0f2129c3100a1185a0876d",
+    "file_size": 4935196,
+    "file_mtime": 1790608610,
+    "added_at": "2026-09-28T16:00:05Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.1126/science.ade2574",
+    "pdf_url": "https://doi.org/10.1126/science.ade2574",
+    "pdf_url_kind": "oa",
+    "html_v": 2,
+    "html_url": ""
+  },
+  {
     "title": "Improved protein structure prediction using potentials from deep learning",
     "authors": [
       "Andrew W. Senior",
