@@ -1,5 +1,41 @@
 [
   {
+    "title": "MOPD: Multi-Teacher On-Policy Distillation for Capability Integration in LLM Post-Training",
+    "authors": [
+      "Wenhan Ma",
+      "Jianyu Wei",
+      "Liang Zhao",
+      "Hailin Zhang",
+      "Bangjun Xiao",
+      "Lei Li",
+      "Qibin Yang",
+      "Bofei Gao",
+      "Yudong Wang",
+      "Rang Li",
+      "Jinhao Dong",
+      "Zhifang Sui",
+      "Fuli Luo"
+    ],
+    "journal": "arXiv",
+    "published": "2026-06-29",
+    "abstract": "Modern large language models (LLMs) rely on reinforcement learning during post-training to push specific capabilities, yet integrating multiple capabilities into one model remains hard. Existing methods, such as Off-Policy Finetune and Mix-RL, are either inefficient or lose performance. In this work, we propose Multi-teacher On-Policy Distillation (MOPD), a post-training paradigm for combining the capabilities of multiple domain RL teachers: we first run per-domain specialised RL to obtain a set of domain teachers, then distill these teachers into the student on its own rollouts. This eliminates exposure bias and provides a dense optimization signal. On Qwen3-30B-A3B, MOPD outperforms Mix-RL, Cascade RL, Off-Policy Finetune, and Param-Merge baselines, inheriting nearly all of each teacher's capability. MOPD also enables parallel, independent development of domain teachers, removing the cross-domain coupling typical of multi-domain post-training. MOPD has been deployed in the post-training of MiMo-V2-Flash, an industrial-scale frontier model, demonstrating its practical value for capability integration in frontier-scale LLMs.",
+    "doi": "",
+    "arxiv_id": "2606.30406",
+    "extraction": "arxiv",
+    "id": "cd7f1cc0584ee14f",
+    "file": "2606.30406v1.pdf",
+    "file_sha256": "cd7f1cc0584ee14f7a0a9380e25348df4ca1421dbad6ec34e7412754e3a2f188",
+    "file_size": 1066370,
+    "file_mtime": 1790705851,
+    "added_at": "2026-09-29T19:00:05Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2606.30406",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2606.30406"
+  },
+  {
     "title": "ProtoCycle: Reflective Tool-Augmented Planning for Text-Guided Protein Design",
     "authors": [
       "Yutang Ge",
