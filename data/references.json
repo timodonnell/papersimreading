@@ -1,5 +1,59 @@
 [
   {
+    "title": "Leveraging large language models for predictive chemistry",
+    "authors": [
+      "Kevin Maik Jablonka",
+      "Philippe Schwaller",
+      "Andres Ortega-Guerrero",
+      "Berend Smit"
+    ],
+    "journal": "Nature Machine Intelligence",
+    "published": "2024-02-06",
+    "abstract": "Machine learning has transformed many fields and has recently found applications in chemistry and materials science. The small datasets commonly found in chemistry sparked the development of sophisticated machine learning approaches that incorporate chemical knowledge for each application and, therefore, require specialized expertise to develop. Here we show that GPT-3, a large language model trained on vast amounts of text extracted from the Internet, can easily be adapted to solve various tasks in chemistry and materials science by fine-tuning it to answer chemical questions in natural language with the correct answer. We compared this approach with dedicated machine learning models for many applications spanning the properties of molecules and materials to the yield of chemical reactions. Surprisingly, our fine-tuned version of GPT-3 can perform comparably to or even outperform conventional machine learning techniques, in particular in the low-data limit. In addition, we can perform inverse design by simply inverting the questions. The ease of use and high performance, especially for small datasets, can impact the fundamental approach to using machine learning in the chemical and material sciences. In addition to a literature search, querying a pre-trained large language model might become a routine way to bootstrap a project by leveraging the collective knowledge encoded in these foundation models, or to provide a baseline for predictive tasks.",
+    "doi": "10.1038/s42256-023-00788-1",
+    "arxiv_id": "",
+    "extraction": "crossref",
+    "id": "34cf31e197079c84",
+    "file": "s42256-023-00788-1.pdf",
+    "file_sha256": "34cf31e197079c84d7d09ca0797b6ea0d57dee57a43a5a4278be7eecdb4bce02",
+    "file_size": 2261799,
+    "file_mtime": 1790711905,
+    "added_at": "2026-09-29T20:00:10Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.1038/s42256-023-00788-1",
+    "pdf_url": "https://www.nature.com/articles/s42256-023-00788-1.pdf",
+    "pdf_url_kind": "oa",
+    "html_v": 2,
+    "html_url": ""
+  },
+  {
+    "title": "Big-Data Science in Porous Materials: Materials Genomics and Machine Learning",
+    "authors": [
+      "Kevin Maik Jablonka",
+      "Daniele Ongari",
+      "Seyed Mohamad Moosavi",
+      "Berend Smit"
+    ],
+    "journal": "arXiv",
+    "published": "2020-01-18",
+    "abstract": "By combining metal nodes with organic linkers we can potentially synthesize millions of possible metal organic frameworks (MOFs). At present, we have libraries of over ten thousand synthesized materials and millions of in-silico predicted materials. The fact that we have so many materials opens many exciting avenues to tailor make a material that is optimal for a given application. However, from an experimental and computational point of view we simply have too many materials to screen using brute-force techniques. In this review, we show that having so many materials allows us to use big-data methods as a powerful technique to study these materials and to discover complex correlations. The first part of the review gives an introduction to the principles of big-data science. We emphasize the importance of data collection, methods to augment small data sets, how to select appropriate training sets. An important part of this review are the different approaches that are used to represent these materials in feature space. The review also includes a general overview of the different ML techniques, but as most applications in porous materials use supervised ML our review is focused on the different approaches for supervised ML. In particular, we review the different method to optimize the ML process and how to quantify the performance of the different methods. In the second part, we review how the different approaches of ML have been applied to porous materials. In particular, we discuss applications in the field of gas storage and separation, the stability of these materials, their electronic properties, and their synthesis. The range of topics illustrates the large variety of topics that can be studied with big-data science. Given the increasing interest of the scientific community in ML, we expect this list to rapidly expand in the coming years.",
+    "doi": "10.1021/acs.chemrev.0c00004",
+    "arxiv_id": "2001.06728",
+    "extraction": "arxiv",
+    "id": "a3f7612a91546fd9",
+    "file": "2001.06728v3.pdf",
+    "file_sha256": "a3f7612a91546fd9334334910389ed2a5b23e79d09acffc2f197d0425c3f593e",
+    "file_size": 8229915,
+    "file_mtime": 1790711800,
+    "added_at": "2026-09-29T20:00:08Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.1021/acs.chemrev.0c00004",
+    "pdf_url": "https://arxiv.org/abs/2001.06728",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2001.06728"
+  },
+  {
     "title": "MOPD: Multi-Teacher On-Policy Distillation for Capability Integration in LLM Post-Training",
     "authors": [
       "Wenhan Ma",
