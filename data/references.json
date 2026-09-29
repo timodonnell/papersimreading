@@ -1,5 +1,38 @@
 [
   {
+    "title": "ProtoCycle: Reflective Tool-Augmented Planning for Text-Guided Protein Design",
+    "authors": [
+      "Yutang Ge",
+      "Guojiang Zhao",
+      "Sihang Li",
+      "Zheng Cheng",
+      "Zifeng Zhao",
+      "Hanchen Xia",
+      "Guolin Ke",
+      "Linfeng Zhang",
+      "Zhifeng Gao",
+      "Yuguang Wang"
+    ],
+    "journal": "arXiv",
+    "published": "2026-04-18",
+    "abstract": "Designing proteins that satisfy natural language functional requirements is a central goal in protein engineering. A straightforward baseline is to fine-tune generic instruction-tuned LLMs as direct text-to-sequence generators, but this is data- and compute-hungry. With limited supervision, LLMs can produce coherent plans in text yet fail to reliably realize them as sequences. This plan-execute gap motivates ProtoCycle, an agentic framework for protein design that uses LLMs primarily to drive a multi-round, feedback-driven decision cycle. ProtoCycle couples an LLM planner with a lightweight tool environment designed to emulate the iterative workflow of human protein engineering and uses LLM-driven reflection on tool feedback to revise plans. Trained with supervised trajectories and online reinforcement learning, ProtoCycle achieves strong language alignment while maintaining competitive foldability, and ablations show that reflection substantially improves sequence quality.",
+    "doi": "",
+    "arxiv_id": "2604.16896",
+    "extraction": "arxiv",
+    "id": "7530296547308579",
+    "file": "2604.16896v1.pdf",
+    "file_sha256": "75302965473085790634e5a98095e9ebd6165277728676ff091910fb3cb423bc",
+    "file_size": 8088162,
+    "file_mtime": 1790688993,
+    "added_at": "2026-09-29T14:00:07Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2604.16896",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2604.16896"
+  },
+  {
     "title": "Evolutionary-scale prediction of atomic-level protein structure with a language model",
     "authors": [
       "Zeming Lin",
