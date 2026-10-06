@@ -1,5 +1,30 @@
 [
   {
+    "title": "AFsample3: Generating and selecting multiple conformational states with Alphafold3",
+    "authors": [
+      "Yogesh Kalakoti",
+      "Björn Wallner"
+    ],
+    "journal": "openRxiv",
+    "published": "2026-01-17",
+    "abstract": "Accurately capturing the conformational diversity of proteins is essential for understanding their mechanisms and regulation. However, current structure prediction approaches, including AlphaFold derivatives, are largely limited to modeling one dominant conformation. Improved sampling methods have expanded this to predicting two states. Here, we present AFsample3, an enhanced sampling framework built upon AlphaFold3 that substantially improves the generation and selection of diverse protein conformations. Across a benchmark of 238 non-redundant proteins with multiple experimentally determined states, AFsample3 significantly outperforms AlphaFold3 and its predecessor AFsample2 by improved predictions for 28% (67/239) of targets (ΔTM > 0.1) while degrading only 3% (8/239), and increases the number of high-quality alternate-state models (TM > 0.8) by 54% (from 54 to 83; p < 0.0001). AF-sample3 improves alternate-state accuracy for 28% of targets (ΔTM > 0.1) while degrading only 3%, and increases the number of targets with high-quality predictions (TM > 0.8) by over 50% compared to standard AlphaFold3. Ensemble diversity is also markedly enhanced (p < 0.0001), enabling accurate modeling of potential intermediate and or additional states. These results demonstrate that the improved sampling in AFsample3 can capture multiple native-like conformations, representing a significant advance in modeling of protein conformational landscapes.",
+    "doi": "10.64898/2026.01.16.699904",
+    "arxiv_id": "",
+    "extraction": "crossref",
+    "id": "3bd79f9db95696ee",
+    "file": "2026.01.16.699904v1.full.pdf",
+    "file_sha256": "3bd79f9db95696ee2078cba407b98525b0812dba3f14d69a7050b42c826d19ed",
+    "file_size": 9453449,
+    "file_mtime": 1791316932,
+    "added_at": "2026-10-06T21:00:02Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.64898/2026.01.16.699904",
+    "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2026/01/17/2026.01.16.699904.full.pdf",
+    "pdf_url_kind": "oa",
+    "html_v": 2,
+    "html_url": ""
+  },
+  {
     "title": "SteerAF: Distogram-based Steering of AlphaFold2 toward Alternative Conformations",
     "authors": [
       "Jiajun Tang",
