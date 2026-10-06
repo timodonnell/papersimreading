@@ -1,5 +1,32 @@
 [
   {
+    "title": "SteerAF: Distogram-based Steering of AlphaFold2 toward Alternative Conformations",
+    "authors": [
+      "Jiajun Tang",
+      "Zefeng Zhu",
+      "Song Yang",
+      "Chen Song"
+    ],
+    "journal": "openRxiv",
+    "published": "2026-06-19",
+    "abstract": "End-to-end structure predictors, such as AlphaFold2, typically output only the dominant conformational state of a given protein, which is biased by the training dataset. Existing strategies for recovering alternative conformations are often computationally expensive and offer limited biological interpretability. Here, we present SteerAF, an inference-time optimization framework based on AlphaFold2 that leverages information encoded in the distogram derived from deep multiple sequence alignments (MSAs) to predict alternative protein conformations. Across four benchmark datasets, SteerAF matches or surpasses existing methods in predicting alternative conformations for the majority of systems. Sparse MSA-feature modifications generated via block gradient ascent exhibit a strong correlation with experimentally characterized functional residues, recovering them with approximately 50% precision in the tested proteins. Furthermore, SteerAF enables effective decoy selection in the absence of experimental structures, and its predictions can serve as seed structures for molecular dynamics simulations to map conformational landscapes. Thus, SteerAF provides an efficient and interpretable approach for predicting alternative conformations, offering a framework that can be extended to other similar predictors and problems.",
+    "doi": "10.64898/2026.06.19.733296",
+    "arxiv_id": "",
+    "extraction": "crossref",
+    "id": "c3b18732880ebf2c",
+    "file": "2026.06.19.733296v1.full.pdf",
+    "file_sha256": "c3b18732880ebf2c637a1fbc3ce834eaa71fb934714103c41f6d6445f4a444d9",
+    "file_size": 16247926,
+    "file_mtime": 1791314926,
+    "added_at": "2026-10-06T20:00:02Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.64898/2026.06.19.733296",
+    "pdf_url": "https://doi.org/10.64898/2026.06.19.733296",
+    "pdf_url_kind": "oa",
+    "html_v": 2,
+    "html_url": ""
+  },
+  {
     "title": "Dynestyx: A Probabilistic Programming Library for Dynamical Systems",
     "authors": [
       "Daniel Waxman",
