@@ -1,5 +1,62 @@
 [
   {
+    "title": "Simple and Effective Masked Diffusion Language Models",
+    "authors": [
+      "Subham Sekhar Sahoo",
+      "Marianne Arriola",
+      "Yair Schiff",
+      "Aaron Gokaslan",
+      "Edgar Marroquin",
+      "Justin T Chiu",
+      "Alexander Rush",
+      "Volodymyr Kuleshov"
+    ],
+    "journal": "arXiv",
+    "published": "2024-06-11",
+    "abstract": "While diffusion models excel at generating high-quality images, prior work reports a significant performance gap between diffusion and autoregressive (AR) methods in language modeling. In this work, we show that simple masked discrete diffusion is more performant than previously thought. We apply an effective training recipe that improves the performance of masked diffusion models and derive a simplified, Rao-Blackwellized objective that results in additional improvements. Our objective has a simple form -- it is a mixture of classical masked language modeling losses -- and can be used to train encoder-only language models that admit efficient samplers, including ones that can generate arbitrary lengths of text semi-autoregressively like a traditional language model. On language modeling benchmarks, a range of masked diffusion models trained with modern engineering practices achieves a new state-of-the-art among diffusion models, and approaches AR perplexity. We provide the code, along with a blog post and video tutorial on the project page: https://s-sahoo.com/mdlm",
+    "doi": "",
+    "arxiv_id": "2406.07524",
+    "extraction": "arxiv",
+    "id": "d3f6e01211777db2",
+    "file": "2406.07524v2.pdf",
+    "file_sha256": "d3f6e01211777db2145d55fb51826eff0f9c1bfe315b142540973f35b626be35",
+    "file_size": 1034628,
+    "file_mtime": 1791380542,
+    "added_at": "2026-10-07T14:00:11Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2406.07524",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2406.07524"
+  },
+  {
+    "title": "Flock: A Negative-Enriched Protein-Protein Interaction Dataset",
+    "authors": [
+      "Naail Kashif-Khan",
+      "Holly Gregory",
+      "Andrew Graven Potterton"
+    ],
+    "journal": "openRxiv",
+    "published": "2026-10-06",
+    "abstract": "Protein-protein interactions (PPIs) govern fundamental biological processes and are central to therapeutic discovery, yet computational prediction methods remain severely limited by a lack of high-quality negative data (non-interacting PPIs). Existing models are trained almost exclusively on positive interactions or random pairs designated as negatives, while legacy negative datasets are limited in scale and contain correctness errors. To address this, we introduce Flock, a negative-enriched PPI dataset of unprecedented scale, containing 26,934 positive and 377,643 negative pairs. Flock integrates biological assemblies from the PDB with highly confident, curated negatives mined from scientific literature using a state-of-the-art agentic LLM workflow. To address the evaluation leakage seen in protein structure modelling, we also present Flock's Leakage-Free Set, a benchmark that strictly controls for sequence and interface similarity, and historical date-based cutoffs used in the training of co-folding models. Our evaluation reveals that the co-folding model ESMFold2 shows performance degradation on the Leakage-Free set, whereas the protein language model ESMC demonstrates stronger generalisation. Flock provides the most comprehensive and challenging PPI benchmark to date, establishing a rigorous new standard for evaluating the generalisability of protein structure and language models on this task.",
+    "doi": "10.64898/2026.09.30.755672",
+    "arxiv_id": "",
+    "extraction": "crossref",
+    "id": "059f5acbace7da7b",
+    "file": "2026.09.30.755672v1.full.pdf",
+    "file_sha256": "059f5acbace7da7bfc05ecb8cb2511dcdc977390b658e8db08c5da208308601e",
+    "file_size": 261203,
+    "file_mtime": 1791379998,
+    "added_at": "2026-10-07T14:00:02Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.64898/2026.09.30.755672",
+    "pdf_url": "https://doi.org/10.64898/2026.09.30.755672",
+    "pdf_url_kind": "oa",
+    "html_v": 2,
+    "html_url": ""
+  },
+  {
     "title": "AFsample3: Generating and selecting multiple conformational states with Alphafold3",
     "authors": [
       "Yogesh Kalakoti",
