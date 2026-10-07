@@ -1,5 +1,38 @@
 [
   {
+    "title": "Reshaping biomolecular structure prediction through strategic conformational exploration with HelixFold-S1",
+    "authors": [
+      "Lihang Liu",
+      "Yang Liu",
+      "Xianbin Ye",
+      "Shanzhuo Zhang",
+      "Yuxin Li",
+      "Kunrui Zhu",
+      "Yang Xue",
+      "Jingbo Zhou",
+      "Xiaonan Zhang",
+      "Xiaomin Fang"
+    ],
+    "journal": "Nature Machine Intelligence",
+    "published": "2026-07-02",
+    "abstract": "Generating large ensembles of candidate conformations is standard for improving biomolecular structure prediction. Yet aimless sampling is inefficient and costly, producing many redundant conformations with limited diversity, particularly for complex multimeric assemblies. Here we present HelixFold-S1, a guided planning approach specifically designed to enhance the structural prediction of biomolecular complexes by strategically targeting the most informative regions of conformational space to produce accurate conformations. For each complex, predicted interchain contact probabilities serve as a blueprint of the conformational space, guiding computational effort towards higher-probability, low-redundancy contacts that constrain structure generation. Across diverse biomolecular complex benchmarks, HelixFold-S1 achieves markedly higher structural accuracy than traditional unguided methods while reducing sampling requirements by an order of magnitude. Predicted contact probabilities also provide a rough indicator of prediction difficulty and sampling utility. These results demonstrate that guided planning reshapes conformational exploration and enables more efficient and accurate structural inference. Liu and colleagues introduce HelixFold-S1, a guided sampling strategy for biomolecular complex structure prediction that targets high-probability interaction regions. The method achieves higher accuracy than traditional unguided methods while reducing computational costs.",
+    "doi": "10.1038/s42256-026-01264-2",
+    "arxiv_id": "",
+    "extraction": "crossref",
+    "id": "6cb1d9b62add7cd5",
+    "file": "s42256-026-01264-2.pdf",
+    "file_sha256": "6cb1d9b62add7cd55a9e2637addd1122e5c21c2f15bb61bcc8f0ca974b290e24",
+    "file_size": 8534029,
+    "file_mtime": 1791385912,
+    "added_at": "2026-10-07T16:00:04Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.1038/s42256-026-01264-2",
+    "pdf_url": "https://arxiv.org/pdf/2507.09251",
+    "pdf_url_kind": "oa",
+    "html_v": 2,
+    "html_url": ""
+  },
+  {
     "title": "Simple and Effective Masked Diffusion Language Models",
     "authors": [
       "Subham Sekhar Sahoo",
