@@ -1,5 +1,33 @@
 [
   {
+    "title": "Protein Autoregressive Modeling via Multiscale Structure Generation",
+    "authors": [
+      "Yanru Qu",
+      "Cheng-Yen Hsieh",
+      "Zaixiang Zheng",
+      "Ge Liu",
+      "Quanquan Gu"
+    ],
+    "journal": "arXiv",
+    "published": "2026-02-04",
+    "abstract": "We present protein autoregressive modeling (PAR), the first multi-scale autoregressive framework for protein backbone generation via coarse-to-fine next-scale prediction. Using the hierarchical nature of proteins, PAR generates structures that mimic sculpting a statue, forming a coarse topology and refining structural details over scales. To achieve this, PAR consists of three key components: (i) multi-scale downsampling operations that represent protein structures across multiple scales during training; (ii) an autoregressive transformer that encodes multi-scale information and produces conditional embeddings to guide structure generation; (iii) a flow-based backbone decoder that generates backbone atoms conditioned on these embeddings. Moreover, autoregressive models suffer from exposure bias, caused by the training and the generation procedure mismatch, and substantially degrades structure generation quality. We effectively alleviate this issue by adopting noisy context learning and scheduled sampling, enabling robust backbone generation. Notably, PAR exhibits strong zero-shot generalization, supporting flexible human-prompted conditional generation and motif scaffolding without requiring fine-tuning. On the unconditional generation benchmark, PAR effectively learns protein distributions and produces backbones of high design quality, and exhibits favorable scaling behavior. Together, these properties establish PAR as a promising framework for protein structure generation.",
+    "doi": "",
+    "arxiv_id": "2602.04883",
+    "extraction": "arxiv",
+    "id": "3263fda742020ef0",
+    "file": "2602.04883v2.pdf",
+    "file_sha256": "3263fda742020ef059de0efd8b3cdeedb3a3ae091686f993315d14ae57f30028",
+    "file_size": 8704960,
+    "file_mtime": 1791488502,
+    "added_at": "2026-10-08T20:00:06Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2602.04883",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2602.04883"
+  },
+  {
     "title": "Thal-Kak: unifying biomolecular structure predictors reveals a sampling–selection gap",
     "authors": [
       "Junhyeok Bae",
