@@ -1,5 +1,40 @@
 [
   {
+    "title": "Thal-Kak: unifying biomolecular structure predictors reveals a sampling–selection gap",
+    "authors": [
+      "Junhyeok Bae",
+      "Soohyun Jo",
+      "Yeajin Kim",
+      "Dongyun Kim",
+      "Kwanwook Kim",
+      "Sanghyun Park",
+      "Sanggeun Park",
+      "Sojung Myung",
+      "Hyunho Shin",
+      "Min Hyeok Kim",
+      "Minji Kang",
+      "Minkyung Baek"
+    ],
+    "journal": "openRxiv",
+    "published": "2026-08-24",
+    "abstract": "Complementary all-atom structure predictors sample different solutions, but how to allocate a fixed sampling budget across them and select the best output remains unclear. Thal-Kak unifies five released predictors under shared upstream inputs and a common schema. Across FoldBench and CASP16, model mixing improves oracle sampling over single-model runs, but selection remains a bottleneck because confidence scores do not transfer across models and existing quality-assessment methods cannot resolve this gap.",
+    "doi": "10.64898/2026.08.19.745680",
+    "arxiv_id": "",
+    "extraction": "crossref",
+    "id": "453e5116b56c219a",
+    "file": "2026.08.19.745680v1.full.pdf",
+    "file_sha256": "453e5116b56c219a5e7a20e7d517b2642b1862e9bac01ad725505a430f7320b2",
+    "file_size": 1242970,
+    "file_mtime": 1791478441,
+    "added_at": "2026-10-08T17:00:02Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.64898/2026.08.19.745680",
+    "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2026/08/24/2026.08.19.745680.full.pdf",
+    "pdf_url_kind": "oa",
+    "html_v": 2,
+    "html_url": ""
+  },
+  {
     "title": "A Shortcut to Structure in AlphaFold 3",
     "authors": [
       "Jonathan Feldman",
