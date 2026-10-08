@@ -1,5 +1,30 @@
 [
   {
+    "title": "A Shortcut to Structure in AlphaFold 3",
+    "authors": [
+      "Jonathan Feldman",
+      "Jeffrey Skolnick"
+    ],
+    "journal": "arXiv",
+    "published": "2026-10-06",
+    "abstract": "AlphaFold 3 predicts protein structures with remarkable accuracy, yet how structural information emerges within the model remains poorly understood. Here, through causal interventions on internal representations and direct probing of every Pairformer block, we trace the formation of global protein geometry and identify the multiple sequence alignment (MSA) as a structural shortcut to the fold. Removing the MSA largely preserves local secondary structure while disrupting the long-range relationships that define global topology. Restoring the MSA-enriched pair representation at only forty residues recovers most of this lost organization, including at pairs never directly modified. This contribution depends on the detailed direction of the MSA module's output rather than its magnitude. The Pairformer rapidly converts this signal into global geometry: the final fold becomes recoverable by approximately block 9 of 48 for a majority of proteins, roughly twenty-seven blocks before the model's decoder can render it, whereas without the MSA it remains inaccessible for most proteins throughout the pass. Which homologs are supplied shapes this trajectory more strongly than which query is supplied; it persists for a designed query that never evolved but collapses for a shuffled sequence. Most importantly, an alignment built for a different protein that shares the fold, supplied only at the structurally corresponding columns, raises the median TM-score against experiment from 0.44 to 0.72, while the same alignment shifted a few residues along the chain performs worse than supplying no alignment at all. What AlphaFold 3 reads from an alignment is therefore a description of the fold itself, transferable between proteins that share one, rather than the query's own evolutionary history. This explains both its accuracy and the limits of what it has solved.",
+    "doi": "",
+    "arxiv_id": "2610.08937",
+    "extraction": "arxiv",
+    "id": "b1e30b0a075982d5",
+    "file": "2610.08937v1.pdf",
+    "file_sha256": "b1e30b0a075982d5a5f4945e14ef907f54f02f3408e938f8bd7d5b819246df5e",
+    "file_size": 14539545,
+    "file_mtime": 1791465576,
+    "added_at": "2026-10-08T14:00:05Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2610.08937",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2610.08937"
+  },
+  {
     "title": "Reshaping biomolecular structure prediction through strategic conformational exploration with HelixFold-S1",
     "authors": [
       "Lihang Liu",
