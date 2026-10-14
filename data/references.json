@@ -1,5 +1,40 @@
 [
   {
+    "title": "Rapid in silico directed evolution by a protein language model with EVOLVEpro",
+    "authors": [
+      "Kaiyi Jiang",
+      "Zhaoqing Yan",
+      "Matteo Di Bernardo",
+      "Samantha R. Sgrizzi",
+      "Lukas Villiger",
+      "Alisan Kayabolen",
+      "B. J. Kim",
+      "Josephine K. Carscadden",
+      "Masahiro Hiraizumi",
+      "Hiroshi Nishimasu",
+      "Jonathan S. Gootenberg",
+      "Omar O. Abudayyeh"
+    ],
+    "journal": "Science",
+    "published": "2025-01-24",
+    "abstract": "Directed protein evolution is central to biomedical applications but faces challenges such as experimental complexity, inefficient multiproperty optimization, and local maxima traps. Although in silico methods that use protein language models (PLMs) can provide modeled fitness landscape guidance, they struggle to generalize across diverse protein families and map to protein activity. We present EVOLVEpro, a few-shot active learning framework that combines PLMs and regression models to rapidly improve protein activity. EVOLVEpro surpasses current methods, yielding up to 100-fold improvements in desired properties. We demonstrate its effectiveness across six proteins in RNA production, genome editing, and antibody binding applications. These results highlight the advantages of few-shot active learning with minimal experimental data over zero-shot predictions. EVOLVEpro opens new possibilities for artificial intelligence–guided protein engineering in biology and medicine.",
+    "doi": "10.1126/science.adr6006",
+    "arxiv_id": "",
+    "extraction": "crossref",
+    "id": "152904c061a61719",
+    "file": "science.adr6006.pdf",
+    "file_sha256": "152904c061a61719b3c3e025a64c60e878b3fbd8e3eb9d1010cbced61b6da996",
+    "file_size": 3711573,
+    "file_mtime": 1792000897,
+    "added_at": "2026-10-14T19:00:02Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.1126/science.adr6006",
+    "pdf_url": "https://www.dropbox.com/scl/fi/igofvsmhpxecog15oiv9o/science.adr6006.pdf?rlkey=fsiotw2qnr43oy5lusc4y1i32&dl=0",
+    "pdf_url_kind": "dropbox",
+    "html_v": 2,
+    "html_url": ""
+  },
+  {
     "title": "FrogNano: Training a 4B Coding Agent via Online Task Synthesis",
     "authors": [
       "Minseon Kim",
