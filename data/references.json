@@ -1,5 +1,33 @@
 [
   {
+    "title": "Are We Overthinking One-Step Generation?",
+    "authors": [
+      "Woobin Park",
+      "Jaeyeon Kim",
+      "Yilun Du",
+      "Sitan Chen",
+      "Bohyung Han"
+    ],
+    "journal": "arXiv",
+    "published": "2026-10-14",
+    "abstract": "Diffusion and flow matching are now dominant frameworks for generative modeling in continuous domains, but they typically require multiple network evaluations at inference. This has motivated extensive research on one-step generative modeling primarily built on diffusion and flow, though existing approaches often rely on complex training machinery. In this work, we introduce Priming Models, a simple two-stage framework for training one-step generators. Motivated by the difficulty of distributional training from scratch, Priming Models are first trained on a reconstruction objective, e.g., pixel-space denoising at a fixed noise level, before undergoing feature-space distributional post-training. Our central scientific finding is that this simple reconstruction stage is already enough to entirely alleviate the difficulty of distributional training. Empirically, across class-conditional image generation, text-to-image generation, and world modeling, Priming Models significantly advance the Pareto frontier of training compute vs. generation quality. On ImageNet at $256 \\times 256$ resolution, we achieve a state-of-the-art FID of $1.19$ among one-step generators using approximately one-tenth the training compute of prior methods with comparable FID. We open-source our codebase at https://github.com/JaeyeonKim01/priming.",
+    "doi": "",
+    "arxiv_id": "2610.20331",
+    "extraction": "arxiv",
+    "id": "1e9afe769446544b",
+    "file": "2610.20331v1.pdf",
+    "file_sha256": "1e9afe769446544b48745d0df2555475cae988b12b75a6cd8fc8f3ed46941f7d",
+    "file_size": 49458657,
+    "file_mtime": 1792097443,
+    "added_at": "2026-10-15T21:00:05Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2610.20331",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2610.20331"
+  },
+  {
     "title": "Immune profiling in a living human recipient of a gene-edited pig kidney",
     "authors": [
       "Guilherme T. Ribas",
