@@ -1,5 +1,31 @@
 [
   {
+    "title": "The Best Optimizer Depends on Batch Size",
+    "authors": [
+      "Xingyu Dang",
+      "Kaiyue Wen",
+      "Sadhika Malladi"
+    ],
+    "journal": "arXiv",
+    "published": "2026-10-06",
+    "abstract": "A plethora of new adaptive optimizers are designed to efficiently estimate and use minibatch gradient statistics to shape parameter updates, but they are typically benchmarked at a single batch size. Hyperparameter scaling rules promise to preserve performance as batch size and gradient noise change, suggesting that the best optimizer at one batch size should remain the best at another. We challenge this approach to developing and evaluating optimizers by showing: (1) no principled scaling rule for Muon works consistently across training settings, and (2) the best optimizer for language model pretraining changes with batch size even after extensive hyperparameter tuning. To understand these failures, we analyze a noisy quadratic model and show that the batch-size scaling rule that preserves performance is direction-dependent, shifting from square-root to linear as a direction's curvature-to-noise ratio rises. We further prove that gradient noise drives a bias-variance tradeoff in preconditioning that can reverse optimizer rankings across batch sizes, even under optimal learning rate and momentum tuning. Consistent with this, when we increase the batch size $16\\times$ partway through language model pretraining, keeping small-batch updates in only the sharpest $0.001\\%$ of directions removes up to $59.5\\%$ of the resulting loss gap over the next $8\\%$ of training, while a random subspace of the same size barely helps. Taken together, our results show that principled optimizer design must account for batch size and empirical benchmarking should be performed across batch sizes.",
+    "doi": "",
+    "arxiv_id": "2610.08975",
+    "extraction": "arxiv",
+    "id": "5cc431e0dccbc1f5",
+    "file": "2610.08975v2.pdf",
+    "file_sha256": "5cc431e0dccbc1f5d492cc1494b7a43180e3e1cf6ae1dafa66adc7d5d817233c",
+    "file_size": 1407831,
+    "file_mtime": 1792088950,
+    "added_at": "2026-10-15T19:00:05Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2610.08975",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": ""
+  },
+  {
     "title": "Recurrent World Models Facilitate Policy Evolution",
     "authors": [
       "David Ha",
