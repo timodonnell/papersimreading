@@ -1,5 +1,34 @@
 [
   {
+    "title": "CME-SpectrumBench: Can LLMs Analyze Condensed Matter Spectral Data?",
+    "authors": [
+      "Jin Gene Wong",
+      "Anjney Midha",
+      "Joseph Mathew Tennyson",
+      "Wei-Lin Chiang",
+      "Ion Stoica",
+      "Zhi-Xun Shen"
+    ],
+    "journal": "arXiv",
+    "published": "2026-10-16",
+    "abstract": "Large Language Models (LLMs) are presently well assessed by expert-level mathematics and physics benchmarks which focus on theoretical, symbolic reasoning. However, we lack experimental benchmarks that evaluate data analysis in frontier research problems, a capability that future domain-specific foundation models must have. To this end, we present CME-SpectrumBench, an expert-designed benchmark consisting of 190 questions that measures how reliably frontier LLMs analyze research-level spectral scientific data in condensed matter experiments (CME). Using simulated CME spectral data, we prompt models to identify structures from 2D intensity arrays in the face of noise and limited instrumental resolution, a test of dense context reasoning. Models are scored by how accurately their numerical answers approach the ground truth. Under direct query, scores generally pale in comparison to handwritten code due to clear failure modes: models can find simple features but struggle to trace patterns or compute derived quantities, and performance typically degrades with increased data resolution and noise/convolution levels. LLM performance becomes comparable to handwritten code by allowing tool use (access to a Python interpreter) with/without ReAct prompting, in effect mapping questions onto agentic code generation problems. Our findings show that frontier models can serve as research assistants by interfacing with data through code, but still face difficulties processing information directly from large datasets - a key barrier future foundation models must overcome. The code and data are publicly available at https://huggingface.co/datasets/jingene/CMESpectrumBench.",
+    "doi": "",
+    "arxiv_id": "2610.24304",
+    "extraction": "arxiv",
+    "id": "68956ac3048d83c9",
+    "file": "2610.24304v1.pdf",
+    "file_sha256": "68956ac3048d83c9fab8c5b04c2a278ca2b3883959efd5b9a8f202893d326efd",
+    "file_size": 10295662,
+    "file_mtime": 1792602402,
+    "added_at": "2026-10-21T18:00:05Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2610.24304",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2610.24304"
+  },
+  {
     "title": "EvoX: Meta-Evolution for Automated Discovery",
     "authors": [
       "Shu Liu",
