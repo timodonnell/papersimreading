@@ -1,5 +1,35 @@
 [
   {
+    "title": "Massively parallel measurement of protein–protein interactions by sequencing using MP3-seq",
+    "authors": [
+      "Alexandr Baryshev",
+      "Alyssa La Fleur",
+      "Benjamin Groves",
+      "Cirstyn Michel",
+      "David Baker",
+      "Ajasja Ljubetič",
+      "Georg Seelig"
+    ],
+    "journal": "Nature Chemical Biology",
+    "published": "2024-08-27",
+    "abstract": "Protein-protein interactions (PPIs) regulate many cellular processes and engineered PPIs have cell and gene therapy applications. Here, we introduce massively parallel PPI measurement by sequencing (MP3-seq), an easy-to-use and highly scalable yeast two-hybrid approach for measuring PPIs. In MP3-seq, DNA barcodes are associated with specific protein pairs and barcode enrichment can be read by sequencing to provide a direct measure of interaction strength. We show that MP3-seq is highly quantitative and scales to over 100,000 interactions. We apply MP3-seq to characterize interactions between families of rationally designed heterodimers and to investigate elements conferring specificity to coiled-coil interactions. Lastly, we predict coiled heterodimer structures using AlphaFold-Multimer (AF-M) and train linear models on physics-based energy terms to predict MP3-seq values. We find that AF-M-based models could be valuable for prescreening interactions but experimentally measuring interactions remains necessary to rank their strengths quantitatively.",
+    "doi": "10.1038/s41589-024-01718-x",
+    "arxiv_id": "",
+    "extraction": "crossref",
+    "id": "62611be704978599",
+    "file": "s41589-024-01718-x.pdf",
+    "file_sha256": "62611be704978599a0376a9aef017fd6141789039f29e121f1343c27ce4bbd7a",
+    "file_size": 4615895,
+    "file_mtime": 1792782551,
+    "added_at": "2026-10-23T20:00:08Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.1038/s41589-024-01718-x",
+    "pdf_url": "https://www.nature.com/articles/s41589-024-01718-x.pdf",
+    "pdf_url_kind": "oa",
+    "html_v": 2,
+    "html_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11511666/"
+  },
+  {
     "title": "NatureBench: Can Coding Agents Match the Published SOTA of Nature-Family Papers?",
     "authors": [
       "Yuru Wang",
