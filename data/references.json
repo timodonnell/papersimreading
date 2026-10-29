@@ -1,5 +1,36 @@
 [
   {
+    "title": "How Post-Training Shapes Biological Reasoning Models",
+    "authors": [
+      "Lukas Fesser",
+      "Hanlin Zhang",
+      "Michelle M. Li",
+      "Eric Wang",
+      "Bryan Perozzi",
+      "Shekoofeh Azizi",
+      "Sham M. Kakade",
+      "Marinka Zitnik"
+    ],
+    "journal": "arXiv",
+    "published": "2026-06-15",
+    "abstract": "Scientific reasoning models for biology combine language models with foundation models trained on multimodal biological data, including DNA, RNA, and proteins. These models are built through post-training, yet how each stage shapes reasoning and generalization remains poorly understood. We study when post-training improves performance and when it induces over-specialization. Across genomics, transcriptomics, and proteins, we train and evaluate more than 100 biological reasoning models under controlled variation in backbone, continued pre-training (CPT), supervised fine-tuning (SFT), and reinforcement learning (RL), measuring both in-domain (ID) and out-of-domain (OOD) performance. We find that each post-training stage reshapes generalization in a distinct way rather than contributing uniform gains. CPT improves downstream performance by aligning models with biological language. SFT consistently increases ID performance but causes OOD performance to peak early and decline as models fit the training distribution. RL, when applied to strong SFT checkpoints with aligned rewards, improves OOD performance and partially recovers generalization. These results show that biological reasoning does not improve monotonically with additional supervision or compute. Instead, performance depends on how training stages are composed. Under fixed post-training budgets, the strongest ID-OOD trade-off comes from brief SFT, larger RL allocations, and asymmetric adaptation capacity across stages.",
+    "doi": "",
+    "arxiv_id": "2606.16517",
+    "extraction": "arxiv",
+    "id": "2646ef1339e58624",
+    "file": "2606.16517v2.pdf",
+    "file_sha256": "2646ef1339e586241b3ccfa1e80427f6e05215fe4bafb0f9d614461cb120000b",
+    "file_size": 1184454,
+    "file_mtime": 1793240651,
+    "added_at": "2026-10-29T03:00:05Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2606.16517",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2606.16517"
+  },
+  {
     "title": "Training AI Scientists to Replicate Research",
     "authors": [
       "Damon Falck",
