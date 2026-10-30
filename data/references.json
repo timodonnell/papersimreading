@@ -1,5 +1,41 @@
 [
   {
+    "title": "EXP-Bench: Can AI Conduct AI Research Experiments?",
+    "authors": [
+      "Patrick Tser Jern Kon",
+      "Jiachen Liu",
+      "Xinyi Zhu",
+      "Qiuyi Ding",
+      "Jingjia Peng",
+      "Jiarong Xing",
+      "Yibo Huang",
+      "Yiming Qiu",
+      "Jayanth Srinivasa",
+      "Myungjin Lee",
+      "Mosharaf Chowdhury",
+      "Matei Zaharia",
+      "Ang Chen"
+    ],
+    "journal": "arXiv",
+    "published": "2025-05-30",
+    "abstract": "Automating AI research holds immense potential for accelerating scientific progress, yet current AI agents struggle with the complexities of rigorous, end-to-end experimentation. We introduce EXP-Bench, a novel benchmark designed to systematically evaluate AI agents on complete research experiments sourced from influential AI publications. Given a research question and incomplete starter code, EXP-Bench challenges AI agents to formulate hypotheses, design and implement experimental procedures, execute them, and analyze results. To enable the creation of such intricate and authentic tasks with high-fidelity, we design a semi-autonomous pipeline to extract and structure crucial experimental details from these research papers and their associated open-source code. With the pipeline, EXP-Bench curated 461 AI research tasks from 51 top-tier AI research papers. Evaluations of leading LLM-based agents, such as OpenHands and IterativeAgent on EXP-Bench demonstrate partial capabilities: while scores on individual experimental aspects such as design or implementation correctness occasionally reach 20-35%, the success rate for complete, executable experiments was a mere 0.5%. By identifying these bottlenecks and providing realistic step-by-step experiment procedures, EXP-Bench serves as a vital tool for future AI agents to improve their ability to conduct AI research experiments. EXP-Bench is open-sourced at https://github.com/Just-Curieous/Curie/tree/main/benchmark/exp_bench.",
+    "doi": "",
+    "arxiv_id": "2505.24785",
+    "extraction": "arxiv",
+    "id": "e90e40d9fdb08a83",
+    "file": "2505.24785v2.pdf",
+    "file_sha256": "e90e40d9fdb08a83eac2a8b20064bcc5d4b81a1acbe800e8f109207ead7f95df",
+    "file_size": 8850399,
+    "file_mtime": 1793376768,
+    "added_at": "2026-10-30T17:00:06Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2505.24785",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2505.24785"
+  },
+  {
     "title": "How Post-Training Shapes Biological Reasoning Models",
     "authors": [
       "Lukas Fesser",
