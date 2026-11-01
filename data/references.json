@@ -1,5 +1,34 @@
 [
   {
+    "title": "Scalable variant-to-function screens using prime editing perturb-seq",
+    "authors": [
+      "Joachim De Jonghe",
+      "Magdalena Armas Reyes",
+      "Catriona Jamieson",
+      "Jens Bager Christensen",
+      "James W Opzoomer",
+      "Jake P Taylor-King"
+    ],
+    "journal": "openRxiv",
+    "published": "2026-10-28",
+    "abstract": "Linking genetic variants to their functional consequences at scale remains a major challenge in human genetics. Perturb-seq is limited in the variants it can install, while prime editing has largely been restricted to simpler mechanistic readouts. Here, we introduce prime editing perturb-seq (PEP-seq), which links programmed mutations to transcriptomic states. We designed 2,164 prime editing guides targeting common expression quantitative trait loci (eQTLs), premature termination codons, and position-matched synonymous controls, generating 749,110 time-resolved single-cell transcriptomes. PEP-seq precisely detected nonsense-mediated decay, while probe-based junction measurements suggested depletion of mature RNAs. For eQTLs, a locus-size-corrected specificity metric showed that the intended target was frequently the most affected transcript within a 1 Mb window, with effects also associated with open chromatin near the edit site. These results establish PEP-seq as a scalable platform for direct, endogenous variant-to-function mapping.",
+    "doi": "10.64898/2026.10.28.762453",
+    "arxiv_id": "",
+    "extraction": "crossref",
+    "id": "7f3d1735b24c4d5b",
+    "file": "2026.10.28.762453v1.full.pdf",
+    "file_sha256": "7f3d1735b24c4d5bb16ce9c8dc9c2ca74aa8b14e42b33e5277c21162843e7622",
+    "file_size": 5371882,
+    "file_mtime": 1793560373,
+    "added_at": "2026-11-01T20:00:02Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.64898/2026.10.28.762453",
+    "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2026/10/28/2026.10.28.762453.full.pdf",
+    "pdf_url_kind": "oa",
+    "html_v": 2,
+    "html_url": ""
+  },
+  {
     "title": "EXP-Bench: Can AI Conduct AI Research Experiments?",
     "authors": [
       "Patrick Tser Jern Kon",
