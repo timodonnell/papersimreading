@@ -1,5 +1,39 @@
 [
   {
+    "title": "Dynamic language model representations for multi-objective reaction optimisation",
+    "authors": [
+      "Joshua W. Sin",
+      "David Ming Segura",
+      "Bojana Ranković",
+      "Siu Lun Chau",
+      "Marius D. R. Lutz",
+      "Andrea Anelli",
+      "Ryan P. Burwood",
+      "Kurt Püntener",
+      "Maximilian J. Notheis",
+      "Raphael Bigler",
+      "Philippe Schwaller"
+    ],
+    "journal": "arXiv",
+    "published": "2026-09-10",
+    "abstract": "Optimising chemical reactions across multiple objectives, such as yield, selectivity, and safety, is central to chemical synthesis, and model-driven approaches depend critically on how reaction components are represented. Established featurisations are either chemically uninformative, as with one-hot encodings, or, as with molecular descriptors, do not readily extend across chemically distinct components. For structurally and functionally diverse components, it is therefore unclear what a shared representation should contain. Constructing such a representation is itself a challenging research undertaking that must be revisited for each new reaction system. Here we bypass this step by learning the reaction representation dynamically from text. Textual descriptions of reaction conditions are encoded by a fine-tuned language model trained jointly with Gaussian process surrogates, yielding task-adaptive representations within a multi-objective Bayesian optimisation loop. Across nickel- and palladium-catalysed cross-couplings in both sequential and parallel experimentation regimes, this approach reaches optimisation convergence in fewer experiments than descriptor libraries or one-hot encoding. Applied prospectively to a palladium-catalysed cyanation spanning mixed ligand denticity and heterogeneous additives, and to a three-objective asymmetric hydrogenation across chiral iridium and ruthenium catalyst families, two rounds of high-throughput experimentation (192 reactions, under 3% of each design space) delivered conditions translating directly to gram scale in 94% and 84% isolated yield, the latter at 99.6% enantiomeric excess.",
+    "doi": "",
+    "arxiv_id": "2609.11790",
+    "extraction": "arxiv",
+    "id": "7c7e0ad5697e777c",
+    "file": "2609.11790v1.pdf",
+    "file_sha256": "7c7e0ad5697e777ce7a95f8258c2800e9d79ece187b5a790790a3c2d6a4d3a33",
+    "file_size": 6100943,
+    "file_mtime": 1793722823,
+    "added_at": "2026-11-03T17:00:07Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2609.11790",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2609.11790"
+  },
+  {
     "title": "Scalable variant-to-function screens using prime editing perturb-seq",
     "authors": [
       "Joachim De Jonghe",
