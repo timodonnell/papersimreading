@@ -1,5 +1,33 @@
 [
   {
+    "title": "Continuous Variational Synthesis",
+    "authors": [
+      "Alan N. Amin",
+      "Mattia G. Gollub",
+      "Andrei Slabodkin",
+      "Elizabeth B. Wood",
+      "Eli N. Weinstein"
+    ],
+    "journal": "arXiv",
+    "published": "2026-09-28",
+    "abstract": "Biological machine learning was long bottlenecked by the ability to synthesize designed DNA. Variational synthesis models control chemical reactions to physically manufacture quadrillions of designed sequences in DNA. However, training these generative models is challenging: constraints on chemical synthesis can force many parameters into a discrete space, limiting the ability to pre-train and fine-tune. In this article we train ``free'' variational synthesis models using stochastic gradient descent in continuous space, and then discretize with post-training quantization to impose hardware and wetware constraints. This enables variational synthesis models to satisfy stringent reward criteria, while still synthesizing diverse designs, achieving a strictly dominating quality-diversity Pareto frontier. We demonstrate by training variational synthesis models of enzymes, peptides, antibody CDRH3s, and regulatory DNA elements. In silico performance is maintained in vitro.",
+    "doi": "",
+    "arxiv_id": "2609.35083",
+    "extraction": "arxiv",
+    "id": "514e0d6450d1b6e5",
+    "file": "2609.35083v1.pdf",
+    "file_sha256": "514e0d6450d1b6e57f1183cb5c48a55c871f71ce86d04f89940c93e644cdf8c7",
+    "file_size": 3288709,
+    "file_mtime": 1793808773,
+    "added_at": "2026-11-04T17:00:05Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2609.35083",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2609.35083"
+  },
+  {
     "title": "Unleashing Scientific Reasoning for Bio-experimental Protocol Generation via Structured Component-based Reward Mechanism",
     "authors": [
       "Haoran Sun",
