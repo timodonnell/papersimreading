@@ -1,5 +1,43 @@
 [
   {
+    "title": "An AI-native experimental laboratory for autonomous biomolecular operations",
+    "authors": [
+      "Mingyu Wu",
+      "Zhaoguo Wang",
+      "Jiabin Wang",
+      "Zhiyuan Dong",
+      "Jingkai Yang",
+      "Qingting Li",
+      "Tianyu Huang",
+      "Chi Zhang",
+      "Ping Song",
+      "Lei Zhao",
+      "Mingqiang Li",
+      "Xiaolei Zuo",
+      "Fei Wang",
+      "Chunhai Fan",
+      "Haibo Chen"
+    ],
+    "journal": "Nature",
+    "published": "2026-11-04",
+    "abstract": "",
+    "doi": "10.1038/s41586-026-11228-6",
+    "arxiv_id": "",
+    "extraction": "crossref",
+    "id": "2fc8fc93afbaeace",
+    "file": "s41586-026-11228-6.pdf",
+    "file_sha256": "2fc8fc93afbaeace91ede0910950b9480a907f65f6607d971380fc09e414557a",
+    "file_size": 21637814,
+    "file_mtime": 1793893340,
+    "added_at": "2026-11-05T16:00:08Z",
+    "links_v": 2,
+    "doi_url": "https://doi.org/10.1038/s41586-026-11228-6",
+    "pdf_url": "https://arxiv.org/pdf/2507.02379",
+    "pdf_url_kind": "oa",
+    "html_v": 2,
+    "html_url": ""
+  },
+  {
     "title": "Into the Unknown: Benchmarking AI agents on open scientific research problems",
     "authors": [
       "Seungone Kim",
