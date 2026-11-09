@@ -1,5 +1,34 @@
 [
   {
+    "title": "3DMolFormer: A Dual-channel Framework for Structure-based Drug Discovery",
+    "authors": [
+      "Xiuyuan Hu",
+      "Guoqing Liu",
+      "Can Chen",
+      "Yang Zhao",
+      "Hao Zhang",
+      "Xue Liu"
+    ],
+    "journal": "arXiv",
+    "published": "2025-02-07",
+    "abstract": "Structure-based drug discovery, encompassing the tasks of protein-ligand docking and pocket-aware 3D drug design, represents a core challenge in drug discovery. However, no existing work can deal with both tasks to effectively leverage the duality between them, and current methods for each task are hindered by challenges in modeling 3D information and the limitations of available data. To address these issues, we propose 3DMolFormer, a unified dual-channel transformer-based framework applicable to both docking and 3D drug design tasks, which exploits their duality by utilizing docking functionalities within the drug design process. Specifically, we represent 3D pocket-ligand complexes using parallel sequences of discrete tokens and continuous numbers, and we design a corresponding dual-channel transformer model to handle this format, thereby overcoming the challenges of 3D information modeling. Additionally, we alleviate data limitations through large-scale pre-training on a mixed dataset, followed by supervised and reinforcement learning fine-tuning techniques respectively tailored for the two tasks. Experimental results demonstrate that 3DMolFormer outperforms previous approaches in both protein-ligand docking and pocket-aware 3D drug design, highlighting its promising application in structure-based drug discovery. The code is available at: https://github.com/HXYfighter/3DMolFormer .",
+    "doi": "",
+    "arxiv_id": "2502.05107",
+    "extraction": "arxiv",
+    "id": "2acf43b757a7e49a",
+    "file": "2502.05107v1.pdf",
+    "file_sha256": "2acf43b757a7e49a220ac26be92392667357dac870872702787df5073267c0e5",
+    "file_size": 1642575,
+    "file_mtime": 1794257794,
+    "added_at": "2026-11-09T21:00:05Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2502.05107",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2502.05107"
+  },
+  {
     "title": "Bridging the Simulation-to-Experiment Gap with Generative Models using Adversarial Distribution Alignment",
     "authors": [
       "Kai Nelson",
