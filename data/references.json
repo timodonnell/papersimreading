@@ -1,5 +1,32 @@
 [
   {
+    "title": "Bridging the Simulation-to-Experiment Gap with Generative Models using Adversarial Distribution Alignment",
+    "authors": [
+      "Kai Nelson",
+      "Tobias Kreiman",
+      "Sergey Levine",
+      "Aditi S. Krishnapriyan"
+    ],
+    "journal": "arXiv",
+    "published": "2026-04-01",
+    "abstract": "A fundamental challenge in science and engineering is the simulation-to-experiment gap. While we often possess prior knowledge of physical laws, these physical laws can be too difficult to solve exactly for complex systems. Such systems are commonly modeled using simulators, which impose computational approximations. Meanwhile, experimental measurements more faithfully represent the real world, but experimental data typically consists of observations that only partially reflect the system's full underlying state. We propose a data-driven distribution alignment framework that bridges this simulation-to-experiment gap by pre-training a generative model on fully observed (but imperfect) simulation data, then aligning it with partial (but real) observations of experimental data. While our method is domain-agnostic, we ground our approach in the physical sciences by introducing Adversarial Distribution Alignment (ADA). This method aligns a generative model of atomic positions -- initially trained on a simulated Boltzmann distribution -- with the distribution of experimental observations. We prove that our method recovers the target observable distribution, even with multiple, potentially correlated observables. We also empirically validate our framework on synthetic, molecular, and experimental protein data, demonstrating that it can align generative models with diverse observables. Our code is available at https://kaityrusnelson.com/ada/.",
+    "doi": "",
+    "arxiv_id": "2604.01169",
+    "extraction": "arxiv",
+    "id": "9f2a9351d87650b6",
+    "file": "2604.01169v2.pdf",
+    "file_sha256": "9f2a9351d87650b6a7584e0f72365cc9c9fadb7205af6279054940e8ade6a4ae",
+    "file_size": 3602456,
+    "file_mtime": 1794240326,
+    "added_at": "2026-11-09T17:00:05Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2604.01169",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2604.01169"
+  },
+  {
     "title": "Scalable variant-to-function screens using prime editing perturb-seq",
     "authors": [
       "Joachim De Jonghe",
