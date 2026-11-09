@@ -1,5 +1,33 @@
 [
   {
+    "title": "Mol-JEPA: A multimodal Joint Embedding Predictive Architecture for Molecules",
+    "authors": [
+      "Florian Rottach",
+      "Sebastian Schieferdecker",
+      "William Rudman",
+      "Randall Balestriero",
+      "Carsten Eickhoff"
+    ],
+    "journal": "arXiv",
+    "published": "2026-08-23",
+    "abstract": "Despite recent advances in molecular foundation models, several limitations remain, such as chemically invalid augmentations, modality collapse, and incomplete representation of biochemical environments. To address these challenges, we present \\textbf{Mol-JEPA}, a scalable framework for learning molecular world models. Rather than relying on suboptimal molecular perturbations, our model uses modality masking to exploit information from molecular structures, cellular phenotypes, binding affinities, ADMET profiles, quantum chemistry simulations and other drug discovery data. Across various benchmarks, we show that the representations learned by Mol-JEPA deliver strong performance, demonstrating the value of incorporating biochemical context through latent space prediction.",
+    "doi": "",
+    "arxiv_id": "2608.22642",
+    "extraction": "arxiv",
+    "id": "7d9dbb9bd4f91509",
+    "file": "2608.22642v4.pdf",
+    "file_sha256": "7d9dbb9bd4f9150930808bfc4624539a7e7ab7b437e5fcf1f86177a864c1755c",
+    "file_size": 8360975,
+    "file_mtime": 1794258435,
+    "added_at": "2026-11-09T22:00:09Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2608.22642",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2608.22642"
+  },
+  {
     "title": "3DMolFormer: A Dual-channel Framework for Structure-based Drug Discovery",
     "authors": [
       "Xiuyuan Hu",
