@@ -1,5 +1,63 @@
 [
   {
+    "title": "Language Models are Super Mario: Absorbing Abilities from Homologous Models as a Free Lunch",
+    "authors": [
+      "Le Yu",
+      "Bowen Yu",
+      "Haiyang Yu",
+      "Fei Huang",
+      "Yongbin Li"
+    ],
+    "journal": "arXiv",
+    "published": "2023-11-06",
+    "abstract": "In this paper, we unveil that Language Models (LMs) can acquire new capabilities by assimilating parameters from homologous models without retraining or GPUs. We first introduce DARE to set most delta parameters (i.e., the disparity between fine-tuned and pre-trained parameters) to zeros without affecting the abilities of Supervised Fine-Tuning (SFT) LMs, which randomly Drops delta parameters with a ratio $p$ And REscales the remaining ones by $1 / (1 - p)$ to approximate the original embeddings. Then, we use DARE as a versatile plug-in to sparsify delta parameters of multiple SFT homologous models for mitigating parameter interference and merge them into a single model by parameter fusing. We experiment with encoder- and decoder-based LMs, showing that: (1) SFT delta parameter value ranges are typically small (within 0.002) with extreme redundancy, and DARE can effortlessly eliminate 90% or even 99% of them; (2) DARE can merge multiple task-specific LMs into one LM with diverse capabilities. Notably, this phenomenon is more pronounced in large-scale LMs, where the merged LM reveals the potential to surpass the performance of any source LM, providing a new discovery. We also utilize DARE to create a merged LM that ranks first among models with 7 billion parameters on the Open LLM Leaderboard.",
+    "doi": "",
+    "arxiv_id": "2311.03099",
+    "extraction": "arxiv",
+    "id": "2072d68a55aa8628",
+    "file": "2311.03099v3.pdf",
+    "file_sha256": "2072d68a55aa86280b47f55523781a17e70029aecf9bef23dc6e6b22ab6c175f",
+    "file_size": 41032228,
+    "file_mtime": 1794336479,
+    "added_at": "2026-11-10T19:00:15Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2311.03099",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2311.03099"
+  },
+  {
+    "title": "AdaMerging: Adaptive Model Merging for Multi-Task Learning",
+    "authors": [
+      "Enneng Yang",
+      "Zhenyi Wang",
+      "Li Shen",
+      "Shiwei Liu",
+      "Guibing Guo",
+      "Xingwei Wang",
+      "Dacheng Tao"
+    ],
+    "journal": "arXiv",
+    "published": "2023-10-04",
+    "abstract": "Multi-task learning (MTL) aims to empower a model to tackle multiple tasks simultaneously. A recent development known as task arithmetic has revealed that several models, each fine-tuned for distinct tasks, can be directly merged into a single model to execute MTL without necessitating a retraining process using the initial training data. Nevertheless, this direct addition of models often leads to a significant deterioration in the overall performance of the merged model. This decline occurs due to potential conflicts and intricate correlations among the multiple tasks. Consequently, the challenge emerges of how to merge pre-trained models more effectively without using their original training data. This paper introduces an innovative technique called Adaptive Model Merging (AdaMerging). This approach aims to autonomously learn the coefficients for model merging, either in a task-wise or layer-wise manner, without relying on the original training data. Specifically, our AdaMerging method operates as an automatic, unsupervised task arithmetic scheme. It leverages entropy minimization on unlabeled test samples from the multi-task setup as a surrogate objective function to iteratively refine the merging coefficients of the multiple models. Our experimental findings across eight tasks demonstrate the efficacy of the AdaMerging scheme we put forth. Compared to the current state-of-the-art task arithmetic merging scheme, AdaMerging showcases a remarkable 11\\% improvement in performance. Notably, AdaMerging also exhibits superior generalization capabilities when applied to unseen downstream tasks. Furthermore, it displays a significantly enhanced robustness to data distribution shifts that may occur during the testing phase.",
+    "doi": "",
+    "arxiv_id": "2310.02575",
+    "extraction": "arxiv",
+    "id": "8c129c55499d114d",
+    "file": "2310.02575v2.pdf",
+    "file_sha256": "8c129c55499d114dd28e46dffb6a62aef57c14e66e3beebfeb2ba8b2e0423233",
+    "file_size": 1840711,
+    "file_mtime": 1794336552,
+    "added_at": "2026-11-10T19:00:10Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2310.02575",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2310.02575"
+  },
+  {
     "title": "Mol-JEPA: A multimodal Joint Embedding Predictive Architecture for Molecules",
     "authors": [
       "Florian Rottach",
