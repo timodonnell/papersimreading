@@ -1,5 +1,40 @@
 [
   {
+    "title": "PivotRL: High Accuracy Agentic Post-Training at Low Compute Cost",
+    "authors": [
+      "Junkeun Yi",
+      "Damon Mosk-Aoyama",
+      "Baihe Huang",
+      "Ritu Gala",
+      "Charles Wang",
+      "Sugam Dipak Devare",
+      "Khushi Bhardwaj",
+      "Abhibha Gupta",
+      "Oleksii Kuchaiev",
+      "Jiantao Jiao",
+      "Jian Zhang",
+      "Venkat Srinivasan"
+    ],
+    "journal": "arXiv",
+    "published": "2026-03-22",
+    "abstract": "Post-training for long-horizon agentic tasks has a tension between compute efficiency and generalization. While supervised fine-tuning (SFT) is compute efficient, it often suffers from out-of-domain (OOD) degradation. Conversely, end-to-end reinforcement learning (E2E RL) preserves OOD capabilities, but incurs high compute costs due to many turns of on-policy rollout. We introduce PivotRL, a novel framework that operates on existing SFT trajectories to combine the compute efficiency of SFT with the OOD accuracy of E2E RL. PivotRL relies on two key mechanisms: first, it executes local, on-policy rollouts and filters for pivots: informative intermediate turns where sampled actions exhibit high variance in outcomes; second, it utilizes rewards for functional-equivalent actions rather than demanding strict string matching with the SFT data demonstration. We theoretically show that these mechanisms incentivize strong learning signals with high natural gradient norm, while maximally preserving policy probability ordering on actions unrelated to training tasks. In comparison to standard SFT on identical data, we demonstrate that PivotRL achieves +4.17% higher in-domain accuracy on average across four agentic domains, and +10.04% higher OOD accuracy in non-agentic tasks. Notably, on agentic coding tasks, PivotRL achieves competitive accuracy with E2E RL with 4x fewer rollout turns. PivotRL is adopted by NVIDIA's Nemotron-3-Super-120B-A12B, acting as the workhorse in production-scale agentic post-training.",
+    "doi": "",
+    "arxiv_id": "2603.21383",
+    "extraction": "arxiv",
+    "id": "9707e5c2f854e462",
+    "file": "2603.21383v1.pdf",
+    "file_sha256": "9707e5c2f854e462f1b1849708eed1f1eb77724277332c9b54851ab53a3eeb09",
+    "file_size": 849286,
+    "file_mtime": 1794862669,
+    "added_at": "2026-11-16T21:00:05Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2603.21383",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2603.21383"
+  },
+  {
     "title": "Pyrite: Building and Benchmarking Protein-Ligand Pose Ranking Agents",
     "authors": [
       "Megha Srivastava",
