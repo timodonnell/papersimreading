@@ -1,5 +1,43 @@
 [
   {
+    "title": "tmol: a GPU-accelerated implementation of the Rosetta energy function for machine learning",
+    "authors": [
+      "Andrew Leaver-Fay",
+      "Kieran Didi",
+      "Jeff Flatten",
+      "Alex Ford",
+      "Guangfeng Zhou",
+      "Nathaniel Corley",
+      "Hahnbeom Park",
+      "Maxwell W. Kazman",
+      "Rafael I. Brent",
+      "Joseph Kleinhenz",
+      "Henry Solberg",
+      "Andrew M. Watkins",
+      "Brian Kuhlman",
+      "David Baker",
+      "Frank DiMaio"
+    ],
+    "journal": "arXiv",
+    "published": "2026-11-16",
+    "abstract": "Physics-inspired forcefields complement generative machine learning models, showing better generalization beyond the training distribution. However, these forcefields are typically slow to evaluate, and their derivatives are difficult to integrate into ML frameworks. We introduce tmol, a GPU-native PyTorch library implementing the state-of-the-art RosettaGenFF forcefield. tmol supports efficient batched differentiable scoring and whole-structure refinement with up to 362-fold throughput increase (batched). Used as a reward in generative protein design, tmol increases hydrogen bonds and water bridges at designed interfaces.",
+    "doi": "",
+    "arxiv_id": "2611.21857",
+    "extraction": "arxiv",
+    "id": "bee836b9a28f313b",
+    "file": "2611.21857v1.pdf",
+    "file_sha256": "bee836b9a28f313bda16d45f172970f94cf0264f64b7ccb1a7c08a73906f3341",
+    "file_size": 17707728,
+    "file_mtime": 1795028462,
+    "added_at": "2026-11-18T20:00:05Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2611.21857",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2611.21857"
+  },
+  {
     "title": "Emergent Biological Capabilities in a Foundation Model for Molecular Interactions",
     "authors": [
       "Adi Mashiach"
