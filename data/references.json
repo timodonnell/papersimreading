@@ -1,5 +1,29 @@
 [
   {
+    "title": "Openhagen Worlds: Calibrated Environments for Measuring and Training Scientific Discovery Agents",
+    "authors": [
+      "Alexander Boesgaard Lorup"
+    ],
+    "journal": "arXiv",
+    "published": "2026-11-18",
+    "abstract": "Agents that do science must choose informative experiments and reason from their results, but most discovery benchmarks cannot separate that skill from recall, unstated scoring rules or shortcut policies. We introduce Openhagen Worlds, a suite of 27 procedurally generated environments (some with finite truth spaces), from classic puzzles of experimental reasoning to simulator-grounded physics and chemistry, in which an agent runs experiments under a budget and commits an answer that a deterministic verifier checks against a hidden truth. Every observation states the complete scoring rule, and each of the 178 difficulty levels is calibrated: it is admitted only if, on 64 development instances, a scripted oracle succeeds on at least 0.75, the strongest plausible non-deductive policy on at most 0.25 and each gated shortcut on at most 0.35. The 92 core levels span all 27 families and are sized to train small models; the 86 frontier rungs extend the 15 discovery worlds with harder questions and with campaigns of three, five and eight or more committed stages on one hidden system. On the same 84 withheld frontier instances, one per family and rung, DeepSeek V4.1 Flash solves 32 at its default reasoning effort with 16,384 tokens per call and 57 at its maximum effort with up to 393,216 tokens per call (oracle: 79); the headroom that remains is largest in eight-stage campaigns. On-policy expert iteration gives a 9B model modest gains: its core-tier success on trained families rises from 0.090 to 0.148, partly through better action format, with no detectable loss on GPQA Diamond. A hosted service plays the core tier's withheld instances.",
+    "doi": "",
+    "arxiv_id": "2611.24711",
+    "extraction": "arxiv",
+    "id": "de958721ff1fa11c",
+    "file": "2611.24711v1.pdf",
+    "file_sha256": "de958721ff1fa11cef675c894e0dd241e7bf054a4af39b06a216bd30586ff86d",
+    "file_size": 749450,
+    "file_mtime": 1795445266,
+    "added_at": "2026-11-23T15:00:12Z",
+    "links_v": 2,
+    "doi_url": "",
+    "pdf_url": "https://arxiv.org/abs/2611.24711",
+    "pdf_url_kind": "arxiv",
+    "html_v": 2,
+    "html_url": "https://arxiv.org/html/2611.24711"
+  },
+  {
     "title": "Antibody design across observed and forecasted antigenic evolution",
     "authors": [
       "Soyoon Park",
